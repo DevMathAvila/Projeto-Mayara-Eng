@@ -1,5 +1,3 @@
-Com certeza! Aqui está o texto limpo e formatado para o seu README.md, sem tabelas, para facilitar a cópia e colagem direta:
-
 📐 Mayara Gaspareto - Portfolio de Arquitetura & Engenharia
 Este é um portfólio de alto padrão desenvolvido com Next.js, focado em performance, minimalismo e experiência do usuário (UX). O projeto utiliza animações fluidas para transmitir a sofisticação e a precisão técnica do trabalho da Mayara.
 
