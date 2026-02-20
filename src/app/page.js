@@ -52,8 +52,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. PORTFÓLIO */}
-      <section id="portfolio" className="max-w-7xl mx-auto px-6 py-20 border-t border-gray-100/50">
+      {/* 2. PROJETOS */}
+      <section id="projetos" className="max-w-7xl mx-auto px-6 py-20 border-t border-gray-100/50">
         <Reveal>
           <div className="flex items-center space-x-4 mb-12">
             <div className="h-[1px] w-12 bg-arq-orange"></div>
@@ -80,8 +80,7 @@ export default function Home() {
       </section>
 
       {/* 4. CONTATO (Footer com Efeito Magnético) */}
-      <footer id="contato" className="bg-arq-blue text-white py-24 px-6 mt-20 overflow-hidden relative">
-        {/* Detalhe de luz sutil ao fundo */}
+      <footer id="contato" className="bg-arq-blue text-white py-24 px-6 mt-20 overflow-hidden relative border-t border-white/5">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/5 to-transparent pointer-events-none" />
 
         <Reveal>
@@ -91,7 +90,6 @@ export default function Home() {
                 Vamos construir algo incrível?
               </h3>
               
-              {/* Botão Magnético */}
               <motion.a 
                 href="https://wa.me/5511999999999" 
                 target="_blank"
