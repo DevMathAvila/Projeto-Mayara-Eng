@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+/* Suas cores personalizadas agora ficam assim na v4: */
+@theme {
+  --color-lux-gold: #C5A47E;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FDFCFB;
+  color: #1a1a1a;
+}
