@@ -4,8 +4,14 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Mayara Gaspareto | Arq & Eng',
-  description: 'Portfólio de Arquitetura, Engenharia e Design de Interiores',
+  title: {
+    default: 'Mayara Gaspareto | Arquitetura & Engenharia',
+    template: '%s | Mayara Gaspareto'
+  },
+  description: 'Projetos autorais que unem a precisão da engenharia com a sensibilidade da arquitetura. Transformando visões em realidade.',
+  keywords: ['Arquitetura', 'Engenharia Civil', 'Design de Interiores', 'Projetos Residenciais'],
+  authors: [{ name: 'Mayara Gaspareto' }],
+  creator: 'Mayara Gaspareto',
 };
 
 export default function RootLayout({ children }) {
