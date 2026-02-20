@@ -1,90 +1,83 @@
-# 🏗️ Portfólio Mayara Gaspareto | Arquiteta & Engenheira
+Com certeza! Aqui está o texto limpo e formatado para o seu README.md, sem tabelas, para facilitar a cópia e colagem direta:
 
-Este é um projeto de alta performance desenvolvido para a arquiteta e engenheira Mayara Gaspareto. O site foi construído seguindo conceitos de minimalismo, sofisticação e uma arquitetura de software moderna e escalável.
+📐 Mayara Gaspareto - Portfolio de Arquitetura & Engenharia
+Este é um portfólio de alto padrão desenvolvido com Next.js, focado em performance, minimalismo e experiência do usuário (UX). O projeto utiliza animações fluidas para transmitir a sofisticação e a precisão técnica do trabalho da Mayara.
 
-## 🛠️ Tecnologias e Ferramentas
+🛠️ Tecnologias e Ferramentas
+Framework: Next.js 16 (App Router)
 
-* **Next.js 16 (App Router):** Framework principal que gerencia rotas dinâmicas e renderização otimizada.
-* **React:** Biblioteca para criação de interfaces baseada em componentes reutilizáveis.
-* **Tailwind CSS:** Framework de estilização utilitária para design responsivo e rápido.
-* **Turbopack:** Motor de build de última geração para um ambiente de desenvolvimento instantâneo.
-* **Git/GitHub:** Controle de versão e sincronização entre diferentes máquinas de trabalho.
+Estilização: Tailwind CSS
 
----
+Animações: Framer Motion
 
-## 📁 Estrutura do Projeto (Mapa do VS Code)
+Ícones: React Icons (Pacote Font Awesome)
 
-Para dar continuidade ao projeto, é fundamental entender a função de cada diretório:
+Bundler: Turbopack (para builds rápidas em ambiente de desenvolvimento)
 
-### 1. `/src/app` (O Coração do Site)
-* **`layout.js`**: A "moldura" global. Define fontes, metadados e mantém a `Navbar` fixa em todas as páginas.
-* **`page.js`**: A página inicial (Home). Organiza a sequência das seções (Hero, Sobre, Projetos Selecionados).
-* **`globals.css`**: Estilos globais e configurações de comportamento (ex: `scroll-behavior: smooth`).
-* **`/projeto/[id]/page.js`**: **Rota Dinâmica**. É uma página "molde" que lê o ID da URL e busca automaticamente os dados do projeto correspondente no banco de dados local.
+🎨 Identidade Visual (Cores & Estilo)
+As cores foram centralizadas no arquivo tailwind.config.js para garantir a unidade visual do projeto:
 
-### 2. `/src/components` (Peças de LEGO)
-* **`layout/Navbar.js`**: Cabeçalho de navegação. Contém a identidade visual "MAYARA GASPARETO | ARQ & ENG" com links inteligentes que funcionam tanto na Home quanto em páginas internas.
-* **`portfolio/ProjectCard.js`**: O componente visual do card. Gerencia o zoom da imagem e a transição de cores ao passar o mouse.
+Cor Primária (arq-blue): #001F3F — Utilizada em textos principais, títulos de seções, Navbar e fundo do Footer.
 
-### 3. `/src/data` (Inteligência e Conteúdo)
-* **`projects.js`**: O banco de dados do projeto. Centraliza todas as informações (Textos, Áreas, Anos, Localizações e Galeria de Fotos). **Não é necessário mexer no HTML para adicionar projetos, apenas atualizar este arquivo.**
+Cor de Destaque (arq-orange): #FF8C00 — Utilizada para elementos de atenção, linhas de design, ícones de skills e botões de ação (CTA).
 
-### 4. `/src/public` (Arquivos Estáticos)
-* **`/images`**: Repositório de mídias. Todas as capas e fotos das galerias devem ser organizadas aqui.
+Fundo (off-white): #FAF9F6 — Cor de fundo principal para reduzir o cansaço visual e destacar as imagens.
 
----
+Tipografia: Uso de fontes Serifadas em Itálico para frases de impacto, conferindo um aspecto editorial e luxuoso ao site.
 
-## 🎨 Identidade Visual e Estilos
+📂 Estrutura de Pastas e Arquivos Chave
+src/app/page.js: Arquivo principal da Home. Controla a ordem das seções (Hero, Portfólio, Sobre e Contato).
 
-O projeto utiliza uma paleta de cores personalizada, configurada no `tailwind.config.js`:
-* **Azul Marinho (`#001F3F`)**: Transmite autoridade, seriedade e luxo.
-* **Laranja (`#D35400`)**: Traz criatividade, energia e destaque aos detalhes técnicos.
+src/app/projeto/[id]/page.js: Template dinâmico para as páginas individuais de cada projeto.
 
----
+src/components/portfolio/ProjectCard.js: Card dos projetos com sistema de hover sofisticado e efeito de Parallax no scroll.
 
-## 🔄 Como mudar de computador (Sincronização via GitHub)
+src/components/ui/Reveal.js: Componente wrapper que gerencia a animação de "surgimento" dos elementos durante a rolagem.
 
-Como configuramos o `.gitignore` para ignorar a pasta pesada `node_modules`, siga estes passos ao abrir o projeto em uma nova máquina:
+src/components/ui/WhatsAppFloating.js: Botão flutuante fixo para conversão imediata via WhatsApp.
 
-1.  **Clonar o repositório:**
-    ```bash
-    git clone [https://github.com/DevMathAvila/Projeto-Mayara-Eng.git](https://github.com/DevMathAvila/Projeto-Mayara-Eng.git)
-    ```
-2.  **Instalar dependências (Obrigatório):**
-    Este comando vai recriar a pasta `node_modules` com base no seu `package.json`.
-    ```bash
-    npm install
-    ```
-3.  **Rodar o ambiente de desenvolvimento:**
-    ```bash
-    npm run dev
-    ```
+src/data/projects.js: Banco de dados local onde todas as informações dos projetos (fotos, textos, áreas) são armazenadas.
 
----
+✨ Atualizações e Modificações Implantadas
+Inversão de Fluxo: O portfólio foi movido para o topo, logo após a Hero, priorizando a exibição do trabalho antes da biografia.
 
-## 📝 Como Adicionar um Novo Projeto
+Destaque de Texto: Adição de uma linha animada na Hero Section que sublinha a palavra "realidade" com um atraso calculado (delay).
 
-Para inserir um novo trabalho no portfólio:
-1.  Adicione as fotos em `public/images/`.
-2.  No arquivo `src/data/projects.js`, adicione um novo objeto ao array:
-    ```javascript
-    {
-      id: "4",
-      title: "Novo Projeto",
-      category: "Engenharia",
-      image: "/images/capa.jpg",
-      description: "Texto descritivo aqui...",
-      details: { location: "Cidade, UF", area: "000m²", year: "2026" },
-      gallery: ["/images/detalhe1.jpg", "/images/detalhe2.jpg"]
-    }
-    ```
+Scroll Parallax: As imagens dentro dos cards de projeto deslizam verticalmente em uma velocidade diferente do scroll da página.
 
----
+Física Magnética: O botão de contato no footer atrai o cursor do mouse quando o usuário aproxima o ponteiro, aumentando a interatividade.
 
-## 🔒 Arquivos de Configuração Críticos
-* **`.gitignore`**: Impede que arquivos temporários e pastas pesadas sejam enviados ao GitHub.
-* **`jsconfig.json`**: Permite o uso do atalho `@/` para facilitar a importação de componentes.
-* **`tailwind.config.js`**: Registra as cores da marca para que o Tailwind as reconheça.
+Layout Responsivo: Ajustes em todos os grids para garantir que o visual premium se mantenha em celulares e tablets.
 
----
-**Desenvolvido com foco em excelência estética e técnica para Mayara Gaspareto.**
+📖 Manual do Usuário e Manutenção (Para Desenvolvedores)
+Como Adicionar Novos Projetos
+Para inserir um novo trabalho, basta editar o arquivo src/data/projects.js. Adicione um novo objeto ao array seguindo este padrão:
+
+id: Identificador único (usado na URL).
+
+title: Nome do projeto.
+
+category: Tipo (Arquitetura, Interiores, etc).
+
+image: Foto principal (Capa).
+
+gallery: Array com caminhos das fotos adicionais.
+
+details: Objeto contendo Localização, Área e Ano.
+
+Edição de Contatos e Links
+WhatsApp: O link deve ser atualizado em dois lugares: no componente WhatsAppFloating.js e no botão do Footer dentro de page.js.
+
+Instagram: O link e o texto do @ estão localizados na seção de Footer do arquivo page.js.
+
+Orientações de Estilo
+Ao criar novos componentes, utilize as classes do Tailwind configuradas para este projeto (ex: text-arq-blue, text-arq-orange, bg-off-white). Evite o uso de cores hexadecimais soltas no código para facilitar mudanças globais de marca no futuro.
+
+📝 Notas para Próximas Versões
+Espaço reservado para implementação de sistema de filtros no portfólio.
+
+Possibilidade de integração com CMS (Contentful ou Sanity) caso o volume de projetos cresça muito.
+
+Otimização de SEO para termos específicos de arquitetura e engenharia na região de atuação.
+
+Projeto desenvolvido com foco em exclusividade e performance. 🚀

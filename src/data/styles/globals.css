@@ -2,9 +2,11 @@
 
 /* Suas cores personalizadas agora ficam assim na v4: */
 @theme {
-  --color-lux-gold: #C5A47E;
+  --color-arq-blue: #001F3F;   /* Azul Marinho */
+  --color-arq-orange: #D35400; /* Laranja */
+  --color-lux-gold: #C5A47E;   /* Mantive o dourado aqui também */
+  --color-off-white: #FDFCFB;
 }
-
 html {
   scroll-behavior: smooth;
 }
