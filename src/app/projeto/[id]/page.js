@@ -1,31 +1,100 @@
+'use client';
+
 import { projects } from '@/data/projects';
 import Navbar from '@/components/layout/Navbar';
 import Link from 'next/link';
 import Image from 'next/image';
-import { notFound } from 'next/navigation';
+import { notFound, useParams } from 'next/navigation';
 import Reveal from '@/components/ui/Reveal';
 import WhatsAppFloating from '@/components/ui/WhatsAppFloating';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
-export default async function ProjetoPage({ params }) {
-  const { id } = await params;
+export default function ProjetoPage() {
+  const params = useParams();
+  const id = params?.id;
   const project = projects.find((p) => p.id === id);
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   if (!project) notFound();
 
   const isRegularizacao = project.id === "6";
-  const isTechnical = project.serviceType === 'tecnico';
+
+  const nextSlide = (e) => {
+    e?.stopPropagation();
+    setCurrentIndex((prev) => (prev === project.gallery.length - 1 ? 0 : prev + 1));
+  };
+
+  const prevSlide = (e) => {
+    e?.stopPropagation();
+    setCurrentIndex((prev) => (prev === 0 ? project.gallery.length - 1 : prev - 1));
+  };
+
+  // Função para detectar o deslize do dedo (Swipe)
+  const handleDragEnd = (event, info) => {
+    if (info.offset.x < -50) nextSlide();
+    if (info.offset.x > 50) prevSlide();
+  };
 
   return (
-    <main className="min-h-screen bg-[#F2F2F2] relative overflow-x-hidden flex flex-col">
+    <main className="bg-[#F2F2F2] relative flex flex-col w-full">
       <Navbar />
       <WhatsAppFloating />
 
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none -z-10">
+      {/* LIGHTBOX MODAL COM SUPORTE A TOUCH/SWIPE */}
+      <AnimatePresence>
+        {isLightboxOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] bg-black flex items-center justify-center p-4 touch-none"
+          >
+            {/* Botão Fechar */}
+            <button 
+              className="absolute top-6 right-6 text-white/70 text-4xl z-[110] p-2"
+              onClick={() => setIsLightboxOpen(false)}
+            >
+              ✕
+            </button>
+            
+            <motion.div 
+              key={currentIndex}
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              onDragEnd={handleDragEnd}
+              className="relative w-full h-full max-w-6xl max-h-[85vh] cursor-grab active:cursor-grabbing"
+            >
+              <Image
+                src={project.gallery[currentIndex]}
+                alt="Zoom"
+                fill
+                unoptimized
+                className="object-contain pointer-events-none"
+              />
+            </motion.div>
+            
+            {/* Indicador de fotos no rodapé do modal */}
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/40 text-[9px] uppercase tracking-[0.4em] text-center">
+              {currentIndex + 1} / {project.gallery.length} <br/>
+              <span className="text-[7px]">Arraste para o lado para navegar</span>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
         <div className="absolute top-[-5%] left-[-10%] w-[700px] h-[700px] bg-arq-blue/5 blur-[120px] rounded-full" />
         <div className="absolute top-[20%] right-[-10%] w-[500px] h-[500px] bg-arq-orange/5 blur-[100px] rounded-full" />
       </div>
 
-      <div className="flex-grow">
+      <div className="flex-grow w-full">
+        {/* HEADER DO PROJETO */}
         <section className="pt-40 pb-16 px-6 max-w-7xl mx-auto">
           <Reveal>
             <Link href="/#projetos" className="text-arq-orange text-[10px] font-bold uppercase tracking-[0.3em] hover:opacity-70 transition mb-12 block">
@@ -48,6 +117,7 @@ export default async function ProjetoPage({ params }) {
           </Reveal>
         </section>
 
+        {/* ÁREA DA GALERIA */}
         <section className="px-6 max-w-7xl mx-auto mb-20">
           <div className={`grid grid-cols-1 ${isRegularizacao ? 'max-w-5xl mx-auto' : 'md:grid-cols-12'} gap-12`}>
 
@@ -73,51 +143,66 @@ export default async function ProjetoPage({ params }) {
             )}
 
             <div className={`${isRegularizacao ? 'w-full' : 'md:col-span-9'} space-y-16`}>
-              {isRegularizacao && (
-                <Reveal>
-                  <div className="relative bg-arq-blue p-12 md:p-20 shadow-[0_60px_100px_-20px_rgba(0,31,63,0.4)] rounded-[3rem] overflow-hidden mb-24 border border-white/5">
-                    <div className="absolute top-[-20%] right-[-10%] w-96 h-96 bg-arq-orange/15 blur-[100px] rounded-full" />
-                    <h2 className="text-3xl md:text-5xl font-light text-white uppercase tracking-[0.2em] mb-16 relative z-10">
-                      Processo de <span className="font-bold text-arq-orange italic">Aprovação</span>
-                    </h2>
-                    <div className="grid gap-8 md:grid-cols-3 relative z-10">
-                      {project.steps?.map((step, idx) => (
-                        <div key={idx} className="bg-white/5 p-8 rounded-[2rem] border border-white/10 hover:bg-white/10 transition-all duration-500 group">
-                          <div className="text-arq-orange font-bold text-5xl mb-6 group-hover:scale-110 transition-transform origin-left">
-                            0{idx + 1}
-                          </div>
-                          <p className="text-gray-300 text-sm leading-relaxed font-light">{step}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </Reveal>
-              )}
-
-              <div className={`grid gap-12 ${isTechnical || isRegularizacao ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1'}`}>
-                {project.gallery.map((img, index) => (
-                  <Reveal key={index} delay={index * 0.1}>
-                    {/* Altura reduzida de h-[600px] para h-[500px] para imagens mais cleans */}
-                    <div className={`relative w-full rounded-[2.5rem] overflow-hidden bg-white shadow-[0_50px_90px_-20px_rgba(0,0,0,0.35)] group transition-all duration-700 hover:-translate-y-4 ${isTechnical || isRegularizacao ? 'h-[450px]' : 'h-[500px] md:h-[550px]'}`}>
+              <div className="relative group">
+                <div 
+                  onClick={() => setIsLightboxOpen(true)}
+                  className="relative h-[500px] md:h-[650px] w-full rounded-[3rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] bg-white cursor-zoom-in"
+                >
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={currentIndex}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.4 }}
+                      className="relative w-full h-full"
+                    >
                       <Image
-                        src={img}
-                        alt="Projeto"
+                        src={project.gallery[currentIndex]}
+                        alt={`${project.title}`}
                         fill
-                        quality={100}
-                        unoptimized={true}
-                        className="object-cover transition-transform duration-[3s] group-hover:scale-110"
+                        priority
+                        unoptimized
+                        className="object-cover"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-arq-blue/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                    </div>
-                  </Reveal>
-                ))}
+                    </motion.div>
+                  </AnimatePresence>
+
+                  {/* Setas de Navegação Desktop */}
+                  <div className="absolute inset-0 hidden md:flex items-center justify-between px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <button onClick={prevSlide} className="w-12 h-12 rounded-full bg-white/90 text-arq-blue flex items-center justify-center shadow-xl hover:bg-arq-orange hover:text-white transition-all transform hover:scale-110">
+                      ←
+                    </button>
+                    <button onClick={nextSlide} className="w-12 h-12 rounded-full bg-white/90 text-arq-blue flex items-center justify-center shadow-xl hover:bg-arq-orange hover:text-white transition-all transform hover:scale-110">
+                      →
+                    </button>
+                  </div>
+
+                  <div className="absolute bottom-8 right-8 bg-arq-blue/80 backdrop-blur-md text-white px-6 py-2 rounded-full text-[10px] font-bold tracking-[0.2em]">
+                    {currentIndex + 1} / {project.gallery.length}
+                  </div>
+                </div>
+                
+                {/* Miniaturas */}
+                <div className="flex gap-4 mt-8 overflow-x-auto pb-4 no-scrollbar">
+                  {project.gallery.map((img, idx) => (
+                    <button 
+                      key={idx} 
+                      onClick={() => setCurrentIndex(idx)}
+                      className={`relative w-24 h-16 rounded-xl overflow-hidden flex-shrink-0 transition-all duration-500 ${currentIndex === idx ? 'ring-2 ring-arq-orange scale-105' : 'opacity-40 hover:opacity-100'}`}
+                    >
+                      <Image src={img} alt="thumb" fill unoptimized className="object-cover" />
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </section>
       </div>
 
-      <footer className="bg-arq-blue text-white py-16 px-6 relative rounded-t-[3rem] z-20 mt-0">
+      {/* FOOTER */}
+      <footer className="bg-arq-blue text-white py-16 px-6 relative rounded-t-[3rem] z-20 w-full overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/5 blur-[100px] rounded-full pointer-events-none" />
         <Reveal>
           <div className="max-w-7xl mx-auto relative z-10">

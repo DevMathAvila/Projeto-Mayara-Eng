@@ -43,7 +43,7 @@ export const projects = [
       area: "105m²",
       year: "2024"
     },
-    gallery: ["/images/daiton/projeto3.jpg", "/images/daiton/projeto3img3.jpg"]
+    gallery: ["/images/daiton/projeto3img2.jpg", "/images/daiton/projeto3.jpg", "/images/daiton/projeto3img3.jpg"]
   },
   {
     id: "4",
@@ -71,7 +71,7 @@ export const projects = [
       area: "210m²",
       year: "2026"
     },
-    gallery: ["/images/paulo/projeto4img2.jpg", "/images/paulo/projeto4img3.jpg"]
+    gallery: ["/images/paulo/projeto4.jpg", "/images/paulo/projeto4img2.jpg", "/images/paulo/projeto4img3.jpg"]
   },
   {
     id: "6",
@@ -94,5 +94,21 @@ export const projects = [
       "/images/aprovacao/reg-imovel.jpg", 
       "/images/aprovacao/reg-tecnica.jpg"
     ]
-  }
+  },
+  {
+      id: "7", 
+      title: "Nome do Novo Projeto",
+      category: "Arquitetura",
+      image: "/projects/novo-projeto/foto1.jpg", // <--- ADICIONE ESTA LINHA
+      description: "Descrição do projeto...",
+      gallery: [
+        "/projects/novo-projeto/foto1.jpg",
+        "/projects/novo-projeto/foto2.jpg",
+      ],
+      details: {
+        location: "Indaiatuba, SP",
+        area: "250m²"
+      }
+    }
+
 ];

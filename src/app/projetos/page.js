@@ -10,7 +10,7 @@ import Link from 'next/link';
 
 export default function ProjetosPage() {
   const [filter, setFilter] = useState('Todos');
-  const categories = ['Todos', 'Arquitetura', 'Engenharia', 'Legalização', 'Visualização'];
+  const categories = ['Todos', 'Arquitetura', 'Legalização'];
 
   const filteredProjects = filter === 'Todos' 
     ? projects 
@@ -49,14 +49,14 @@ export default function ProjetosPage() {
           </Reveal>
         </section>
 
-        {/* FILTROS (Estilo Minimal) */}
+        {/* FILTROS (Ajustado apenas para responsividade) */}
         <section className="px-6 max-w-7xl mx-auto mb-12">
-          <div className="flex flex-wrap gap-2 border-b border-arq-blue/5 pb-6">
+          <div className="flex flex-wrap justify-center md:justify-start gap-2 border-b border-arq-blue/5 pb-6">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`text-[8px] font-bold uppercase tracking-[0.3em] px-6 py-2 transition-all duration-500 rounded-full border ${
+                className={`text-[8px] font-bold uppercase tracking-[0.3em] px-6 py-2 transition-all duration-500 rounded-full border whitespace-nowrap ${
                   filter === cat 
                   ? 'bg-arq-blue text-white border-arq-blue shadow-md scale-105' 
                   : 'text-arq-blue/40 border-transparent hover:text-arq-orange'
