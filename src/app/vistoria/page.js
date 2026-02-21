@@ -95,7 +95,7 @@ export default function VistoriaPage() {
                    <span className="text-arq-orange italic font-serif font-light underline decoration-1 underline-offset-8">Inquestionável?</span>
                 </h2>
                 <Link 
-                  href="https://wa.me/5519991219662" 
+                  href="https://wa.me/5519994092433" 
                   target="_blank"
                   className="bg-arq-orange text-white px-16 py-6 rounded-2xl font-bold uppercase text-sm tracking-[0.3em] hover:bg-white hover:text-arq-blue transition-all duration-500 shadow-2xl hover:scale-105 active:scale-95"
                 >

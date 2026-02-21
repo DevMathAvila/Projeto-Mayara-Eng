@@ -55,7 +55,7 @@ export default function Navbar() {
 
           {/* Redes Sociais */}
           <a 
-            href="https://instagram.com/mayaragaspareto_arq" 
+            href="https://instagram.com/eng.mayaragaspareto" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="text-gray-400 hover:text-arq-orange transition-all transform hover:scale-110"

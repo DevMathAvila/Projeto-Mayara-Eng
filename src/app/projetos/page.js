@@ -102,7 +102,7 @@ export default function ProjetosPage() {
                   Vamos projetar o <span className="text-arq-orange not-italic font-sans font-bold text-2xl md:text-3xl">amanhã?</span>
                 </h3>
                 <Link 
-                  href="https://wa.me/5519991219662" 
+                  href="https://wa.me/5519994092433" 
                   target="_blank"
                   className="inline-block bg-white text-arq-blue px-10 py-4 rounded-full font-bold uppercase text-[9px] tracking-[0.4em] shadow-lg hover:bg-arq-orange hover:text-white transition-all duration-500"
                 >

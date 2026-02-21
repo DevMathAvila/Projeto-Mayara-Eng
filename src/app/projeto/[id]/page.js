@@ -135,7 +135,7 @@ export default function ProjetoPage() {
                       <p className="text-sm font-medium">{project.details.area}</p>
                     </div>
                   </div>
-                  <a href="https://wa.me/5519991219662" target="_blank" className="mt-8 block text-center bg-arq-blue text-white py-4 text-[9px] font-bold uppercase tracking-widest hover:bg-arq-orange transition-all shadow-lg rounded-xl">
+                  <a href="https://wa.me/5519994092433" target="_blank" className="mt-8 block text-center bg-arq-blue text-white py-4 text-[9px] font-bold uppercase tracking-widest hover:bg-arq-orange transition-all shadow-lg rounded-xl">
                     Solicitar Similar
                   </a>
                 </div>
@@ -212,7 +212,7 @@ export default function ProjetoPage() {
                   {isRegularizacao ? 'Deseja legalizar seu' : 'Vamos projetar o seu'} <br/>
                   <span className="text-arq-orange not-italic font-sans font-bold text-2xl md:text-3xl uppercase tracking-tighter">Imóvel agora?</span>
                 </h3>
-                <Link href="https://wa.me/5519991219662" target="_blank" className="inline-block bg-white text-arq-blue px-10 py-4 rounded-full font-bold uppercase text-[9px] tracking-[0.4em] hover:bg-arq-orange hover:text-white transition-all duration-500 shadow-md">
+                <Link href="https://wa.me/5519994092433" target="_blank" className="inline-block bg-white text-arq-blue px-10 py-4 rounded-full font-bold uppercase text-[9px] tracking-[0.4em] hover:bg-arq-orange hover:text-white transition-all duration-500 shadow-md">
                   Falar com a Mayara
                 </Link>
               </div>

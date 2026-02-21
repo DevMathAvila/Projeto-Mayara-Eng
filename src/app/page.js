@@ -1,4 +1,5 @@
 'use client';
+import { useState, useEffect } from 'react'; // Adicionado para controle de hidratação
 import { motion } from 'framer-motion';
 import Navbar from '@/components/layout/Navbar';
 import ProjectCard from '@/components/portfolio/ProjectCard';
@@ -9,6 +10,13 @@ import WhatsAppFloating from '@/components/ui/WhatsAppFloating';
 import Link from 'next/link';
 
 export default function Home() {
+  const [mounted, setMounted] = useState(false);
+
+  // Garante que o componente foi montado no cliente antes de certas interações
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const jornadas = [
     {
       step: "01",
@@ -120,7 +128,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* NOVO: 2.5 JORNADA DO CLIENTE (ETAPAS) */}
+      {/* 2.5 JORNADA DO CLIENTE */}
       <section className="bg-arq-blue py-24 md:py-32 px-6 relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <Reveal>
@@ -142,7 +150,6 @@ export default function Home() {
             ))}
           </div>
         </div>
-        {/* Luz de fundo sutil para a seção escura */}
         <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-arq-orange/10 blur-[150px] rounded-full pointer-events-none" />
       </section>
 
@@ -155,7 +162,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. CONTATO */}
+      {/* 4. CONTATO / FOOTER */}
       <footer id="contato" className="bg-arq-blue text-white py-20 md:py-32 px-6 overflow-hidden relative rounded-t-[3rem] md:rounded-t-[5rem]">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full md:w-[1000px] h-[500px] bg-white/5 blur-[80px] md:blur-[130px] rounded-full pointer-events-none" />
 
@@ -167,9 +174,10 @@ export default function Home() {
               </h3>
               
               <motion.a 
-                href="https://wa.me/5519991219662" 
+                href="https://wa.me/5519994092433" 
                 target="_blank"
                 rel="noopener noreferrer"
+                suppressHydrationWarning={true} // Evita erro se o navegador tentar formatar o número
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-block bg-white text-arq-blue px-10 md:px-20 py-5 md:py-7 rounded-full font-bold uppercase text-[10px] md:text-[11px] tracking-[0.3em] md:tracking-[0.5em] shadow-xl hover:bg-arq-orange hover:text-white transition-all duration-500"
@@ -182,7 +190,7 @@ export default function Home() {
 
             <div className="flex flex-col md:flex-row justify-between items-center w-full gap-8 md:gap-10">
               <div className="text-center md:text-left group">
-                <span className="block text-[9px] md:text-[10px] uppercase tracking-[0.5em] text-white/30 mb-2 md:mb-3 transition-colors">Mayara Gaspareto</span>
+                <span className="block text-[9px] md:text-[10px] uppercase tracking-[0.5em] text-white/30 mb-2 md:mb-3">Mayara Gaspareto</span>
                 <a href="https://instagram.com/eng.mayaragaspareto" target="_blank" className="text-xl md:text-2xl font-serif italic hover:text-arq-orange transition-all duration-300">
                   @eng.mayaragaspareto
                 </a>
@@ -190,7 +198,9 @@ export default function Home() {
               
               <div className="text-[8px] md:text-[10px] uppercase tracking-[0.4em] md:tracking-[0.6em] text-white/20 text-center md:text-right font-light leading-loose">
                 Engenharia de Precisão <span className="mx-1 md:mx-2">•</span> Arquitetura Contemporânea <br/>
-                © {new Date().getFullYear()} Todos os direitos reservados
+                <span suppressHydrationWarning={true}>
+                  © {mounted ? new Date().getFullYear() : '2024'} Todos os direitos reservados
+                </span>
               </div>
             </div>
           </div>
