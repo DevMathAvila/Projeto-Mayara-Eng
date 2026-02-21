@@ -1,86 +1,65 @@
-O Gemini disse
-Entendido! Um bom README.md é essencial para você (ou qualquer outro desenvolvedor) entender a lógica do projeto daqui a seis meses sem precisar ler linha por linha.
+🏗️ Mayara Gaspareto - Arquitetura & Engenharia
+Este é um projeto Next.js 16+ de alto padrão, desenvolvido com foco em performance, estética minimalista e experiência do usuário (UX) fluida. O site serve como portfólio digital e ferramenta de conversão para serviços de arquitetura e legalização.
 
-Aqui está um guia completo e profissional do estado atual do seu projeto:
+🚀 Implementações Recentes (O que mudou)
+Lightbox Responsivo com Swipe: Sistema de visualização de fotos em tela cheia que aceita gestos de "arrastar" (framer-motion) no celular para trocar de imagem.
 
-🏗️ Portfólio Mayara Gaspareto - Engenharia & Arquitetura
-Este é um projeto de alta performance desenvolvido para exibir o portfólio profissional da engenheira Mayara Gaspareto. O site foca em uma experiência visual imersiva, utilizando tecnologias modernas de renderização e animação.
+Seção "Sua Jornada Conosco": Implementação de um fluxo de trabalho (Workflow) educativo para o cliente, estrategicamente posicionado entre o Portfólio e o Sobre.
 
-🚀 Tecnologias Utilizadas
-Next.js 15+: Framework React para produção, utilizando a nova App Router para roteamento dinâmico.
+Lógica de Fallback de Imagens: O sistema agora é inteligente. Se um projeto for cadastrado sem imagem de capa (image), ele puxa automaticamente a primeira foto da gallery.
 
-Tailwind CSS: Framework de estilização por classes utilitárias para um design responsivo e moderno.
+Limitação Dinâmica na Home: A página inicial agora exibe apenas os 6 projetos mais relevantes (via .slice(0, 6)), mantendo o carregamento ultra-rápido.
 
-Framer Motion: Biblioteca responsável por todas as animações de entrada e transições suaves (Reveal).
+Proteção contra Erros de Renderização: Adição de verificações que impedem o site de "quebrar" caso algum dado de projeto venha incompleto ou vazio.
 
-Lucide React: Biblioteca de ícones vetoriais.
+🗺️ Mapa do Projeto: "Quem fala com Quem"
+Para manter a organização, o projeto é dividido em Dados, Páginas e Componentes:
 
-React Hooks: Uso intensivo de useState, useRef e use para manipulação de estados e parâmetros.
+O Coração (Dados):
 
-📂 Estrutura de Pastas (Principais)
-/app: Contém as rotas e páginas do sistema (ex: projeto/[id]).
+src/data/projects.js: Onde tudo começa. Este é o único lugar que você mexe para adicionar projetos. Se mudar algo aqui, reflete no site todo.
 
-/components: Componentes reutilizáveis (Navbar, Footer, Reveal, WhatsApp).
+As Telas (Pages):
 
-/data: Centralização de informações (Arquivo projects.js que alimenta todo o site).
+src/app/page.js (Home): Consome os dados e exibe o resumo (6 projetos + Jornada + Sobre).
 
-/public: Armazenamento de imagens e assets estáticos.
+src/app/projetos/page.js: A vitrine completa. Lista todos os IDs sem limite.
 
-🛠️ Funcionalidades e Lógicas Implementadas
-1. Sistema Dinâmico de Projetos
-A página de detalhes do projeto identifica automaticamente qual conteúdo exibir através do id na URL.
+src/app/projeto/[id]/page.js: A página interna detalhada. É ela quem gerencia o Lightbox e a galeria de cada projeto.
 
-Projetos 1 a 5 (Arquitetura/Interiores): Focados em galeria visual de alto impacto.
+As Peças (Components):
 
-Projeto 6 (Regularização): Possui um layout exclusivo que inclui um "Card de Processo de Aprovação" e uma grid diferenciada.
+ProjectCard.js: O cartão visual que aparece nas listagens. Ele recebe os dados e cria o link.
 
-2. Layouts Condicionais
-O código diferencia o tipo de serviço através de flags:
+Reveal.js: O responsável pelos efeitos de "surgimento" suave quando você rola a página.
 
-isRegularizacao: Ativa o bloco de etapas técnicas exclusivo para o serviço de prefeitura.
+🛠️ Guia de Manutenção (Onde mexer?)
+✅ Pode Alterar à Vontade:
+Adicionar Projetos: Vá em src/data/projects.js. Basta copiar um bloco {...} e mudar o ID, título e fotos.
 
-isTechnical: Ajusta o tamanho das imagens para serviços mais documentais.
+Textos da Jornada: No arquivo src/app/page.js, procure pela constante jornadas. Você pode editar as descrições dos 4 passos lá.
 
-3. Componentes Especiais
-Navbar Adaptável: Fixa no topo com fundo transparente/blur.
+Links de Contato: Todos os botões apontam para o seu WhatsApp. Estão espalhados nos rodapés e no botão flutuante.
 
-WhatsApp Flutuante: Acesso rápido para conversão de clientes.
+⚠️ Cuidado ao Mexer:
+ProjectCard.js: Contém a lógica de tratamento de erro de imagem. Se deletar o tratamento de imageSrc, o console voltará a dar erro de string vazia.
 
-Reveal Animado: Componente que envolve blocos de texto e imagem, fazendo-os "surgir" na tela conforme o usuário faz o scroll.
+layout.js: Contém as fontes e metadados globais.
 
-🔄 Alterações Recentes (Log de Versões)
-Ajuste de Scroll e Sticky
-Corrigido o comportamento do aside (Especificações). Agora ele utiliza sticky top-32, acompanhando o conteúdo lateral enquanto houver espaço na seção.
+Tailwind Config: As cores personalizadas como arq-blue e arq-orange estão travadas nas configurações globais de estilo.
 
-Removidas restrições de altura (h-screen) que impediam o scroll natural.
+🚨 Alertas para Próximas Atualizações
+Imagens Pesadas: Sempre que subir fotos novas para a pasta public, tente usar imagens de no máximo 500kb a 800kb. Fotos de 5MB direto da câmera vão deixar o site lento.
 
-Footer Slim
-Redesenhado para ser mais minimalista e elegante.
+Novas Categorias: Se você criar uma categoria nova (ex: "Interiores"), ela aparecerá no card, mas se quiser que ela apareça no filtro da página de listagem, precisará adicionar o botão de filtro manualmente lá.
 
-Adicionado o efeito de "Glow" (brilho) no fundo para manter a identidade visual premium.
+IDs Únicos: Nunca repita um ID no arquivo de dados. Se houver dois projetos com id: "1", a página interna não saberá qual abrir.
 
-Padronização do Copyright dinâmico (pega o ano atual automaticamente).
+🎨 Identidade Visual (Design Tokens)
+Cor Primária: arq-blue (Confiança, Engenharia, Sobriedade)
 
-Navegação de Galeria
-Implementada a lógica de botões de navegação e layout de grid inteligente para evitar espaços em branco entre o conteúdo e o rodapé.
+Cor de Destaque: arq-orange (Ação, Criatividade, Calor)
 
-🎨 Identidade Visual (Cores)
-O projeto utiliza um arquivo de configuração do Tailwind com as seguintes cores customizadas:
+Tipografia: Mix entre Serif Italic (Sofisticação) e Sans Serif Bold (Tecnicidade).
 
-arq-blue: Azul profundo para contrastes e seriedade.
-
-arq-orange: Laranja vibrante para Call to Actions (CTAs) e detalhes de destaque.
-
-bg-[#F2F2F2]: Cinza ultra-claro para o fundo, evitando o cansaço visual do branco puro.
-
-📖 Como Adicionar Novos Projetos
-Para adicionar um novo projeto, basta abrir o arquivo @/data/projects.js e inserir um novo objeto no array seguindo o padrão:
-
-JavaScript
-{
-  id: "7",
-  title: "Nome do Projeto",
-  serviceType: "residencial",
-  gallery: ["/img1.jpg", "/img2.jpg"],
-  details: { location: "Indaiatuba/SP", area: "200m²" }
-}
+Nota do Desenvolvedor: Este código foi escrito para ser auto-sustentável. A estrutura de animações com framer-motion garante que, mesmo com muitos projetos, a transição entre páginas seja luxuosa e fluida.
