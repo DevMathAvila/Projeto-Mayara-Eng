@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function About() {
   return (
     <section id="sobre" className="py-24 bg-white">
@@ -6,11 +8,15 @@ export default function About() {
           
           {/* Lado da Imagem */}
           <div className="relative">
-            <div className="aspect-[4/5] overflow-hidden rounded-sm shadow-2xl">
-              <img 
-                src="/images/mayara-perfil.jpg" 
+            <div className="relative aspect-[4/5] overflow-hidden rounded-sm shadow-2xl bg-gray-100">
+              <Image 
+                src="/images/sobre/mayara-perfil.jpg" 
                 alt="Mayara Gaspareto - Arquiteta e Engenheira" 
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+                fill
+                priority
+                quality={100}
+                unoptimized={true}
+                className="object-cover grayscale-[50%] hover:grayscale-0 transition-all duration-1000"
               />
             </div>
             <div className="absolute -bottom-8 -left-8 w-48 h-48 bg-arq-orange/5 -z-10 rounded-full blur-3xl"></div>
@@ -46,7 +52,7 @@ export default function About() {
             {/* Números/Conquistas */}
             <div className="grid grid-cols-3 gap-8 pt-8 border-t border-gray-100">
               <div>
-                <span className="block text-3xl font-light text-arq-blue">50+</span>
+                <span className="block text-3xl font-light text-arq-blue">20+</span>
                 <span className="text-[9px] text-gray-400 uppercase tracking-widest font-bold">Projetos</span>
               </div>
               <div>

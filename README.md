@@ -1,81 +1,86 @@
-📐 Mayara Gaspareto - Portfolio de Arquitetura & Engenharia
-Este é um portfólio de alto padrão desenvolvido com Next.js, focado em performance, minimalismo e experiência do usuário (UX). O projeto utiliza animações fluidas para transmitir a sofisticação e a precisão técnica do trabalho da Mayara.
+O Gemini disse
+Entendido! Um bom README.md é essencial para você (ou qualquer outro desenvolvedor) entender a lógica do projeto daqui a seis meses sem precisar ler linha por linha.
 
-🛠️ Tecnologias e Ferramentas
-Framework: Next.js 16 (App Router)
+Aqui está um guia completo e profissional do estado atual do seu projeto:
 
-Estilização: Tailwind CSS
+🏗️ Portfólio Mayara Gaspareto - Engenharia & Arquitetura
+Este é um projeto de alta performance desenvolvido para exibir o portfólio profissional da engenheira Mayara Gaspareto. O site foca em uma experiência visual imersiva, utilizando tecnologias modernas de renderização e animação.
 
-Animações: Framer Motion
+🚀 Tecnologias Utilizadas
+Next.js 15+: Framework React para produção, utilizando a nova App Router para roteamento dinâmico.
 
-Ícones: React Icons (Pacote Font Awesome)
+Tailwind CSS: Framework de estilização por classes utilitárias para um design responsivo e moderno.
 
-Bundler: Turbopack (para builds rápidas em ambiente de desenvolvimento)
+Framer Motion: Biblioteca responsável por todas as animações de entrada e transições suaves (Reveal).
 
-🎨 Identidade Visual (Cores & Estilo)
-As cores foram centralizadas no arquivo tailwind.config.js para garantir a unidade visual do projeto:
+Lucide React: Biblioteca de ícones vetoriais.
 
-Cor Primária (arq-blue): #001F3F — Utilizada em textos principais, títulos de seções, Navbar e fundo do Footer.
+React Hooks: Uso intensivo de useState, useRef e use para manipulação de estados e parâmetros.
 
-Cor de Destaque (arq-orange): #FF8C00 — Utilizada para elementos de atenção, linhas de design, ícones de skills e botões de ação (CTA).
+📂 Estrutura de Pastas (Principais)
+/app: Contém as rotas e páginas do sistema (ex: projeto/[id]).
 
-Fundo (off-white): #FAF9F6 — Cor de fundo principal para reduzir o cansaço visual e destacar as imagens.
+/components: Componentes reutilizáveis (Navbar, Footer, Reveal, WhatsApp).
 
-Tipografia: Uso de fontes Serifadas em Itálico para frases de impacto, conferindo um aspecto editorial e luxuoso ao site.
+/data: Centralização de informações (Arquivo projects.js que alimenta todo o site).
 
-📂 Estrutura de Pastas e Arquivos Chave
-src/app/page.js: Arquivo principal da Home. Controla a ordem das seções (Hero, Portfólio, Sobre e Contato).
+/public: Armazenamento de imagens e assets estáticos.
 
-src/app/projeto/[id]/page.js: Template dinâmico para as páginas individuais de cada projeto.
+🛠️ Funcionalidades e Lógicas Implementadas
+1. Sistema Dinâmico de Projetos
+A página de detalhes do projeto identifica automaticamente qual conteúdo exibir através do id na URL.
 
-src/components/portfolio/ProjectCard.js: Card dos projetos com sistema de hover sofisticado e efeito de Parallax no scroll.
+Projetos 1 a 5 (Arquitetura/Interiores): Focados em galeria visual de alto impacto.
 
-src/components/ui/Reveal.js: Componente wrapper que gerencia a animação de "surgimento" dos elementos durante a rolagem.
+Projeto 6 (Regularização): Possui um layout exclusivo que inclui um "Card de Processo de Aprovação" e uma grid diferenciada.
 
-src/components/ui/WhatsAppFloating.js: Botão flutuante fixo para conversão imediata via WhatsApp.
+2. Layouts Condicionais
+O código diferencia o tipo de serviço através de flags:
 
-src/data/projects.js: Banco de dados local onde todas as informações dos projetos (fotos, textos, áreas) são armazenadas.
+isRegularizacao: Ativa o bloco de etapas técnicas exclusivo para o serviço de prefeitura.
 
-✨ Atualizações e Modificações Implantadas
-Inversão de Fluxo: O portfólio foi movido para o topo, logo após a Hero, priorizando a exibição do trabalho antes da biografia.
+isTechnical: Ajusta o tamanho das imagens para serviços mais documentais.
 
-Destaque de Texto: Adição de uma linha animada na Hero Section que sublinha a palavra "realidade" com um atraso calculado (delay).
+3. Componentes Especiais
+Navbar Adaptável: Fixa no topo com fundo transparente/blur.
 
-Scroll Parallax: As imagens dentro dos cards de projeto deslizam verticalmente em uma velocidade diferente do scroll da página.
+WhatsApp Flutuante: Acesso rápido para conversão de clientes.
 
-Física Magnética: O botão de contato no footer atrai o cursor do mouse quando o usuário aproxima o ponteiro, aumentando a interatividade.
+Reveal Animado: Componente que envolve blocos de texto e imagem, fazendo-os "surgir" na tela conforme o usuário faz o scroll.
 
-Layout Responsivo: Ajustes em todos os grids para garantir que o visual premium se mantenha em celulares e tablets.
+🔄 Alterações Recentes (Log de Versões)
+Ajuste de Scroll e Sticky
+Corrigido o comportamento do aside (Especificações). Agora ele utiliza sticky top-32, acompanhando o conteúdo lateral enquanto houver espaço na seção.
 
-📖 Manual do Usuário e Manutenção (Para Desenvolvedores)
-Como Adicionar Novos Projetos
-Para inserir um novo trabalho, basta editar o arquivo src/data/projects.js. Adicione um novo objeto ao array seguindo este padrão:
+Removidas restrições de altura (h-screen) que impediam o scroll natural.
 
-id: Identificador único (usado na URL).
+Footer Slim
+Redesenhado para ser mais minimalista e elegante.
 
-title: Nome do projeto.
+Adicionado o efeito de "Glow" (brilho) no fundo para manter a identidade visual premium.
 
-category: Tipo (Arquitetura, Interiores, etc).
+Padronização do Copyright dinâmico (pega o ano atual automaticamente).
 
-image: Foto principal (Capa).
+Navegação de Galeria
+Implementada a lógica de botões de navegação e layout de grid inteligente para evitar espaços em branco entre o conteúdo e o rodapé.
 
-gallery: Array com caminhos das fotos adicionais.
+🎨 Identidade Visual (Cores)
+O projeto utiliza um arquivo de configuração do Tailwind com as seguintes cores customizadas:
 
-details: Objeto contendo Localização, Área e Ano.
+arq-blue: Azul profundo para contrastes e seriedade.
 
-Edição de Contatos e Links
-WhatsApp: O link deve ser atualizado em dois lugares: no componente WhatsAppFloating.js e no botão do Footer dentro de page.js.
+arq-orange: Laranja vibrante para Call to Actions (CTAs) e detalhes de destaque.
 
-Instagram: O link e o texto do @ estão localizados na seção de Footer do arquivo page.js.
+bg-[#F2F2F2]: Cinza ultra-claro para o fundo, evitando o cansaço visual do branco puro.
 
-Orientações de Estilo
-Ao criar novos componentes, utilize as classes do Tailwind configuradas para este projeto (ex: text-arq-blue, text-arq-orange, bg-off-white). Evite o uso de cores hexadecimais soltas no código para facilitar mudanças globais de marca no futuro.
+📖 Como Adicionar Novos Projetos
+Para adicionar um novo projeto, basta abrir o arquivo @/data/projects.js e inserir um novo objeto no array seguindo o padrão:
 
-📝 Notas para Próximas Versões
-Espaço reservado para implementação de sistema de filtros no portfólio.
-
-Possibilidade de integração com CMS (Contentful ou Sanity) caso o volume de projetos cresça muito.
-
-Otimização de SEO para termos específicos de arquitetura e engenharia na região de atuação.
-
-Projeto desenvolvido com foco em exclusividade e performance. 🚀
+JavaScript
+{
+  id: "7",
+  title: "Nome do Projeto",
+  serviceType: "residencial",
+  gallery: ["/img1.jpg", "/img2.jpg"],
+  details: { location: "Indaiatuba/SP", area: "200m²" }
+}
