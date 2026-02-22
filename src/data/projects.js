@@ -103,8 +103,8 @@ export const projects = [
       description: "Fachada de casa térrea moderna em condomínio de alto padrão, com iluminação em LED linear, garagem para dois carros e paisagismo contemporâneo. Projeto arquitetônico autoral de Mayara Gaspareto.",
       gallery: [
         "/images/piemonte/Projeto6.jpeg",
-        "/images/piemonte/projeto6img2.jpeg",
-        "/images/piemonte/projeto6img3.jpeg",
+        "/images/piemonte/Projeto6img2.jpeg",
+        "/images/piemonte/Projeto6img3.jpeg",
       ],
       details: {
         location: "Indaiatuba, SP",
