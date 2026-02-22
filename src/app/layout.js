@@ -5,6 +5,12 @@ import Navbar from '@/components/layout/Navbar';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
+  // --- ADICIONE ESTE BLOCO AQUI ---
+  icons: {
+    icon: '/images/favicon/logo-brand.png', // Ícone da aba
+    apple: '/images/favicon/logo-brand.png', // Ícone para iPhone
+  },
+  // --------------------------------
   title: {
     default: 'Mayara Gaspareto | Arquitetura & Engenharia em Indaiatuba',
     template: '%s | Mayara Gaspareto'

@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react'; // Adicionado para controle de hidratação
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/layout/Navbar';
 import ProjectCard from '@/components/portfolio/ProjectCard';
@@ -12,7 +12,6 @@ import Link from 'next/link';
 export default function Home() {
   const [mounted, setMounted] = useState(false);
 
-  // Garante que o componente foi montado no cliente antes de certas interações
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -95,14 +94,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. PROJETOS - LIMITADOS A 6 */}
+      {/* 2. PROJETOS - LIMITADOS A 3 */}
       <section id="projetos" className="max-w-7xl mx-auto px-6 py-20 md:py-32">
         <Reveal>
           <div className="flex items-center justify-between mb-16 md:mb-24">
             <div className="flex items-center space-x-4 md:space-x-6">
               <div className="h-[1px] w-12 md:w-16 bg-arq-orange"></div>
               <h2 className="text-[10px] md:text-xs font-bold tracking-[0.4em] text-arq-blue uppercase">
-                Portfólio de Projetos
+                Portfólio em Destaque
               </h2>
             </div>
             <Link href="/projetos" className="hidden md:block text-[9px] uppercase tracking-[0.3em] text-arq-blue/40 hover:text-arq-orange transition-colors">
@@ -111,8 +110,9 @@ export default function Home() {
           </div>
         </Reveal>
 
+        {/* Slice ajustado para 3 itens */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-16">
-          {projects.slice(0, 6).map((item, index) => (
+          {projects.slice(0, 3).map((item, index) => (
             <Reveal key={item.id} delay={index * 0.1}>
               <div className="group transition-all duration-700 hover:-translate-y-4">
                  <ProjectCard project={item} />
@@ -177,7 +177,6 @@ export default function Home() {
                 href="https://wa.me/5519994092433" 
                 target="_blank"
                 rel="noopener noreferrer"
-                suppressHydrationWarning={true} // Evita erro se o navegador tentar formatar o número
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-block bg-white text-arq-blue px-10 md:px-20 py-5 md:py-7 rounded-full font-bold uppercase text-[10px] md:text-[11px] tracking-[0.3em] md:tracking-[0.5em] shadow-xl hover:bg-arq-orange hover:text-white transition-all duration-500"
