@@ -32,7 +32,6 @@ export default function ProjetoPage() {
     setCurrentIndex((prev) => (prev === 0 ? project.gallery.length - 1 : prev - 1));
   };
 
-  // Função para detectar o deslize do dedo (Swipe)
   const handleDragEnd = (event, info) => {
     if (info.offset.x < -50) nextSlide();
     if (info.offset.x > 50) prevSlide();
@@ -43,7 +42,7 @@ export default function ProjetoPage() {
       <Navbar />
       <WhatsAppFloating />
 
-      {/* LIGHTBOX MODAL COM SUPORTE A TOUCH/SWIPE */}
+      {/* LIGHTBOX MODAL */}
       <AnimatePresence>
         {isLightboxOpen && (
           <motion.div
@@ -52,14 +51,12 @@ export default function ProjetoPage() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[100] bg-black flex items-center justify-center p-4 touch-none"
           >
-            {/* Botão Fechar */}
             <button 
               className="absolute top-6 right-6 text-white/70 text-4xl z-[110] p-2"
               onClick={() => setIsLightboxOpen(false)}
             >
               ✕
             </button>
-            
             <motion.div 
               key={currentIndex}
               initial={{ opacity: 0, x: 100 }}
@@ -78,12 +75,6 @@ export default function ProjetoPage() {
                 className="object-contain pointer-events-none"
               />
             </motion.div>
-            
-            {/* Indicador de fotos no rodapé do modal */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/40 text-[9px] uppercase tracking-[0.4em] text-center">
-              {currentIndex + 1} / {project.gallery.length} <br/>
-              <span className="text-[7px]">Arraste para o lado para navegar</span>
-            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -94,19 +85,18 @@ export default function ProjetoPage() {
       </div>
 
       <div className="flex-grow w-full">
-        {/* HEADER DO PROJETO */}
-        <section className="pt-40 pb-16 px-6 max-w-7xl mx-auto">
+        {/* HEADER */}
+        <section className="pt-40 pb-12 px-6 max-w-7xl mx-auto">
           <Reveal>
             <Link href="/#projetos" className="text-arq-orange text-[10px] font-bold uppercase tracking-[0.3em] hover:opacity-70 transition mb-12 block">
               ← Voltar aos Projetos
             </Link>
-
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
               <div>
                 <span className="inline-block bg-arq-orange/10 text-arq-orange px-3 py-1 rounded-full font-bold uppercase tracking-widest text-[9px] mb-4">
                   {project.category} {project.details?.location && `• ${project.details.location}`}
                 </span>
-                <h1 className="text-5xl md:text-7xl font-light text-arq-blue tracking-tighter font-serif italic">
+                <h1 className="text-5xl md:text-7xl font-light text-arq-blue tracking-tighter font-serif italic leading-none">
                   {project.title}
                 </h1>
               </div>
@@ -117,112 +107,115 @@ export default function ProjetoPage() {
           </Reveal>
         </section>
 
-        {/* ÁREA DA GALERIA */}
+        {/* CONTEÚDO PRINCIPAL */}
         <section className="px-6 max-w-7xl mx-auto mb-20">
-          <div className={`grid grid-cols-1 ${isRegularizacao ? 'max-w-5xl mx-auto' : 'md:grid-cols-12'} gap-12`}>
-
-            {!isRegularizacao && (
-              <aside className="md:col-span-3 space-y-8 h-fit md:sticky md:top-32">
-                <div className="bg-white/90 backdrop-blur-md p-8 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.08)] border border-white rounded-3xl">
-                  <h4 className="text-arq-blue font-bold uppercase text-[10px] tracking-[0.2em] mb-6 border-b pb-2">Especificações</h4>
-                  <div className="space-y-6 text-arq-blue">
-                    <div>
-                      <span className="block text-[9px] uppercase text-gray-400 font-bold">Local</span>
-                      <p className="text-sm font-medium">{project.details.location}</p>
-                    </div>
-                    <div>
-                      <span className="block text-[9px] uppercase text-gray-400 font-bold">Área</span>
-                      <p className="text-sm font-medium">{project.details.area}</p>
+          <div className="flex flex-col gap-16">
+            
+            {/* 1. SEÇÃO DE TEXTO/RISCOS (Sempre em cima na Regularização) */}
+            {isRegularizacao && (
+              <Reveal>
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-8">
+                  <div className="lg:col-span-5">
+                    <div className="bg-arq-blue p-8 md:p-10 rounded-[2.5rem] text-white shadow-2xl relative overflow-hidden h-full">
+                      <h4 className="text-arq-orange font-bold uppercase text-[10px] tracking-[0.3em] mb-6">Atenção ao Patrimônio</h4>
+                      <h3 className="text-2xl font-serif italic mb-8">O que acontece sem a regularização?</h3>
+                      <ul className="space-y-4">
+                        {project.risks.map((risk, idx) => (
+                          <li key={idx} className="flex gap-4 text-sm text-white/80 leading-relaxed border-b border-white/5 pb-3">
+                            <span className="text-arq-orange font-bold">✕</span>
+                            {risk}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
-                  <a href="https://wa.me/5519994092433" target="_blank" className="mt-8 block text-center bg-arq-blue text-white py-4 text-[9px] font-bold uppercase tracking-widest hover:bg-arq-orange transition-all shadow-lg rounded-xl">
-                    Solicitar Similar
-                  </a>
+                  <div className="lg:col-span-7 space-y-10">
+                    <div>
+                      <h4 className="text-arq-blue font-bold uppercase text-[10px] tracking-[0.3em] mb-4">A Solução Técnica</h4>
+                      <h2 className="text-3xl md:text-4xl text-arq-blue font-serif italic mb-6">Como Mayara Gaspareto atua no seu processo</h2>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {project.steps.map((step, idx) => (
+                          <div key={idx} className="p-6 bg-white rounded-2xl border border-gray-100 hover:border-arq-orange/30 transition-colors">
+                            <span className="block text-arq-orange font-serif italic text-xl mb-2">0{idx + 1}</span>
+                            <h5 className="text-arq-blue font-bold uppercase text-[10px] tracking-widest mb-1">{step.title}</h5>
+                            <p className="text-gray-500 text-[11px] leading-relaxed">{step.desc}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="p-6 bg-arq-orange/5 rounded-2xl border border-arq-orange/10">
+                      <p className="text-arq-blue text-xs italic font-serif leading-relaxed">
+                        "Nosso objetivo é garantir que você tenha tranquilidade total sobre a segurança jurídica do seu imóvel, eliminando burocracias."
+                        <span className="block mt-2 not-italic font-sans font-bold text-[8px] uppercase tracking-widest text-arq-orange">— Mayara Gaspareto, Engenheira Civil</span>
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </aside>
+              </Reveal>
             )}
 
-            <div className={`${isRegularizacao ? 'w-full' : 'md:col-span-9'} space-y-16`}>
-              <div className="relative group">
-                <div 
-                  onClick={() => setIsLightboxOpen(true)}
-                  className="relative h-[500px] md:h-[650px] w-full rounded-[3rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] bg-white cursor-zoom-in"
-                >
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={currentIndex}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.4 }}
-                      className="relative w-full h-full"
-                    >
-                      <Image
-                        src={project.gallery[currentIndex]}
-                        alt={`${project.title}`}
-                        fill
-                        priority
-                        unoptimized
-                        className="object-cover"
-                      />
-                    </motion.div>
-                  </AnimatePresence>
-
-                  {/* Setas de Navegação Desktop */}
-                  <div className="absolute inset-0 hidden md:flex items-center justify-between px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <button onClick={prevSlide} className="w-12 h-12 rounded-full bg-white/90 text-arq-blue flex items-center justify-center shadow-xl hover:bg-arq-orange hover:text-white transition-all transform hover:scale-110">
-                      ←
-                    </button>
-                    <button onClick={nextSlide} className="w-12 h-12 rounded-full bg-white/90 text-arq-blue flex items-center justify-center shadow-xl hover:bg-arq-orange hover:text-white transition-all transform hover:scale-110">
-                      →
-                    </button>
+            {/* 2. GALERIA (Agora menor e embaixo) */}
+            <div className={`w-full ${isRegularizacao ? 'max-w-4xl mx-auto' : 'md:grid md:grid-cols-12 md:gap-12'}`}>
+              
+              {!isRegularizacao && (
+                <aside className="md:col-span-3 space-y-8 h-fit md:sticky md:top-32 mb-8 md:mb-0">
+                  <div className="bg-white/90 backdrop-blur-md p-8 shadow-xl border border-white rounded-3xl">
+                    <h4 className="text-arq-blue font-bold uppercase text-[10px] tracking-[0.2em] mb-6 border-b pb-2">Especificações</h4>
+                    <div className="space-y-4 text-arq-blue">
+                      <div><span className="block text-[9px] uppercase text-gray-400 font-bold">Local</span><p className="text-sm font-medium">{project.details.location}</p></div>
+                      <div><span className="block text-[9px] uppercase text-gray-400 font-bold">Área</span><p className="text-sm font-medium">{project.details.area}</p></div>
+                    </div>
+                    <a href="https://wa.me/5519994092433" target="_blank" className="mt-8 block text-center bg-arq-blue text-white py-4 text-[9px] font-bold uppercase tracking-widest hover:bg-arq-orange transition-all rounded-xl">Solicitar Similar</a>
                   </div>
+                </aside>
+              )}
 
-                  <div className="absolute bottom-8 right-8 bg-arq-blue/80 backdrop-blur-md text-white px-6 py-2 rounded-full text-[10px] font-bold tracking-[0.2em]">
-                    {currentIndex + 1} / {project.gallery.length}
+              <div className={`${isRegularizacao ? 'w-full' : 'md:col-span-9'} space-y-8`}>
+                {isRegularizacao && <h4 className="text-center text-arq-blue/30 font-bold uppercase text-[9px] tracking-[0.4em] mb-[-20px]">Galeria de Registros</h4>}
+                <div className="relative group">
+                  <div 
+                    onClick={() => setIsLightboxOpen(true)}
+                    className={`relative ${isRegularizacao ? 'h-[350px] md:h-[450px]' : 'h-[500px] md:h-[650px]'} w-full rounded-[2rem] overflow-hidden shadow-xl bg-white cursor-zoom-in transition-all duration-700`}
+                  >
+                    <AnimatePresence mode="wait">
+                      <motion.div key={currentIndex} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="relative w-full h-full">
+                        <Image src={project.gallery[currentIndex]} alt={project.title} fill priority unoptimized className="object-cover" />
+                      </motion.div>
+                    </AnimatePresence>
+                    <div className="absolute inset-0 hidden md:flex items-center justify-between px-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <button onClick={prevSlide} className="w-10 h-10 rounded-full bg-white/90 text-arq-blue flex items-center justify-center shadow-lg hover:bg-arq-orange hover:text-white transition-all">←</button>
+                      <button onClick={nextSlide} className="w-10 h-10 rounded-full bg-white/90 text-arq-blue flex items-center justify-center shadow-lg hover:bg-arq-orange hover:text-white transition-all">→</button>
+                    </div>
                   </div>
-                </div>
-                
-                {/* Miniaturas */}
-                <div className="flex gap-4 mt-8 overflow-x-auto pb-4 no-scrollbar">
-                  {project.gallery.map((img, idx) => (
-                    <button 
-                      key={idx} 
-                      onClick={() => setCurrentIndex(idx)}
-                      className={`relative w-24 h-16 rounded-xl overflow-hidden flex-shrink-0 transition-all duration-500 ${currentIndex === idx ? 'ring-2 ring-arq-orange scale-105' : 'opacity-40 hover:opacity-100'}`}
-                    >
-                      <Image src={img} alt="thumb" fill unoptimized className="object-cover" />
-                    </button>
-                  ))}
+                  <div className="flex gap-3 mt-6 overflow-x-auto pb-4 no-scrollbar justify-center">
+                    {project.gallery.map((img, idx) => (
+                      <button key={idx} onClick={() => setCurrentIndex(idx)} className={`relative w-20 h-14 rounded-lg overflow-hidden flex-shrink-0 transition-all ${currentIndex === idx ? 'ring-2 ring-arq-orange scale-105' : 'opacity-40 hover:opacity-100'}`}>
+                        <Image src={img} alt="thumb" fill unoptimized className="object-cover" />
+                      </button>
+                    ))}
+                  </div>
                 </div>
               </div>
+
             </div>
           </div>
         </section>
       </div>
 
-      {/* FOOTER */}
       <footer className="bg-arq-blue text-white py-16 px-6 relative rounded-t-[3rem] z-20 w-full overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/5 blur-[100px] rounded-full pointer-events-none" />
         <Reveal>
-          <div className="max-w-7xl mx-auto relative z-10">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-10">
-              <div className="text-center md:text-left">
-                <h3 className="text-3xl md:text-4xl font-light mb-6 italic font-serif leading-tight">
-                  {isRegularizacao ? 'Deseja legalizar seu' : 'Vamos projetar o seu'} <br/>
-                  <span className="text-arq-orange not-italic font-sans font-bold text-2xl md:text-3xl uppercase tracking-tighter">Imóvel agora?</span>
-                </h3>
-                <Link href="https://wa.me/5519994092433" target="_blank" className="inline-block bg-white text-arq-blue px-10 py-4 rounded-full font-bold uppercase text-[9px] tracking-[0.4em] hover:bg-arq-orange hover:text-white transition-all duration-500 shadow-md">
-                  Falar com a Mayara
-                </Link>
-              </div>
-              <div className="h-[1px] w-full md:w-[1px] md:h-32 bg-white/10"></div>
-              <div className="flex flex-col items-center md:items-end gap-4 text-[8px] uppercase tracking-[0.5em] text-white/20">
-                <div className="text-center md:text-right">
-                  <span className="block text-white/30 mb-1 lowercase tracking-normal">@eng.mayaragaspareto</span>
-                  <p>© {new Date().getFullYear()} Mayara Gaspareto</p>
-                </div>
-              </div>
+          <div className="max-w-7xl mx-auto relative z-10 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-10">
+            <div>
+              <h3 className="text-3xl md:text-4xl font-light mb-6 italic font-serif leading-tight">
+                {isRegularizacao ? 'Deseja legalizar seu' : 'Vamos projetar o seu'} <br/>
+                <span className="text-arq-orange not-italic font-sans font-bold text-2xl md:text-3xl uppercase tracking-tighter">Imóvel agora?</span>
+              </h3>
+              <Link href="https://wa.me/5519994092433" target="_blank" className="inline-block bg-white text-arq-blue px-10 py-4 rounded-full font-bold uppercase text-[9px] tracking-[0.4em] hover:bg-arq-orange hover:text-white transition-all shadow-md">Falar com a Mayara</Link>
+            </div>
+            <div className="flex flex-col items-center md:items-end gap-2 text-[8px] uppercase tracking-[0.5em] text-white/20">
+              <span className="text-white/30 lowercase tracking-normal">@eng.mayaragaspareto</span>
+              <p>© {new Date().getFullYear()} Mayara Gaspareto</p>
             </div>
           </div>
         </Reveal>

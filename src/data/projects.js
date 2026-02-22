@@ -19,7 +19,7 @@ export const projects = [
   },
   {
     id: "2",
-    title: "Residência Evidências", // Mudei o nome para não repetir o ID 1
+    title: "Residência Evidências",
     category: "Arquitetura",
     serviceType: "arquitetura",
     image: "/images/emerson/projeto2.jpg",
@@ -78,16 +78,37 @@ export const projects = [
     title: "Regularização de Imóvel",
     category: "Regularização",
     serviceType: "tecnico",
+    isSpecial: true, // Tag para o componente identificar o layout novo
     image: "/images/aprovacao/approve.jpg",
-    description: "Transformamos a burocracia em tranquilidade. Um processo rigoroso que garante a segurança jurídica do seu patrimônio e a plena regularidade do seu imóvel perante os órgãos competentes.",
+    description: "A regularização imobiliária vai muito além de papéis: é a proteção do seu patrimônio. Mayara Gaspareto oferece gestão técnica especializada para converter irregularidades em segurança jurídica.",
     details: {
-      area: "Processo Legal",
+      location: "Indaiatuba e Região",
+      area: "Consultoria Técnica",
       year: "2025"
     },
+    risks: [
+      "Impedimento de venda através de financiamento bancário.",
+      "Risco de multas administrativas pesadas pela prefeitura.",
+      "Dificuldades em processos de inventário ou partilha de bens.",
+      "Impossibilidade de obter alvará de funcionamento para comércios."
+    ],
     steps: [
-      "1. Análise Documental: Verificação minuciosa de matrículas e histórico do imóvel.",
-      "2. Levantamento Técnico: Medição in loco (as-built) para atualização precisa da planta.",
-      "3. Aprovação Final: Gestão do protocolo até a emissão do Habite-se e averbação."
+      { 
+        title: "Diagnóstico Documental", 
+        desc: "Análise minuciosa da matrícula e histórico do imóvel junto aos órgãos competentes." 
+      },
+      { 
+        title: "Levantamento 'As-Built'", 
+        desc: "Medição técnica in loco para atualizar a planta de acordo com a realidade construída." 
+      },
+      { 
+        title: "Protocolo de Aprovação", 
+        desc: "Gestão completa da tramitação burocrática até a emissão do Habite-se." 
+      },
+      { 
+        title: "Segurança Final", 
+        desc: "Suporte para averbação no Cartório de Registro de Imóveis, garantindo a regularidade total." 
+      }
     ],
     gallery: [
       "/images/aprovacao/reg-imovel.jpg", 
@@ -108,8 +129,8 @@ export const projects = [
       ],
       details: {
         location: "Indaiatuba, SP",
-        area: "180m²"
+        area: "180m²",
+        year: "2025"
       }
     }
-
 ];
