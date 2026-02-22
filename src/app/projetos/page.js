@@ -10,7 +10,7 @@ import Link from 'next/link';
 
 export default function ProjetosPage() {
   const [filter, setFilter] = useState('Todos');
-  const categories = ['Todos', 'Arquitetura', 'Legalização'];
+  const categories = ['Todos', 'Arquitetura', 'Regularização'];
 
   const filteredProjects = filter === 'Todos' 
     ? projects 

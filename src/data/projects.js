@@ -19,7 +19,7 @@ export const projects = [
   },
   {
     id: "2",
-    title: "Residência Horizon", // Mudei o nome para não repetir o ID 1
+    title: "Residência Evidências", // Mudei o nome para não repetir o ID 1
     category: "Arquitetura",
     serviceType: "arquitetura",
     image: "/images/emerson/projeto2.jpg",
@@ -47,28 +47,28 @@ export const projects = [
   },
   {
     id: "4",
-    title: "Consultoria Técnica e Aprovação",
-    category: "Legalização",
-    serviceType: "tecnico",
-    image: "/images/projeto4.jpg",
+    title: "Residência Maria Candida",
+    category: "Arquitetura",
+    serviceType: "arquitetura",
+    image: "/images/candida/projeto4img2.jpg",
     description: "Viabilidade e segurança técnica para projetos de alto padrão. Gestão completa do processo de aprovação e alvará, garantindo conformidade total com as normas do condomínio e prefeitura.",
     details: {
       location: "Indaiatuba, SP",
-      area: "420m²",
+      area: "200m²",
       year: "2024"
     },
-    gallery: ["/images/projeto4.jpg", "/images/projeto4-detalhe1.jpg"]
+    gallery: ["/images/candida/projeto4img2.jpg", "/images/candida/projeto4img3.jpg", "/images/candida/projeto4.jpg"]
   },
   {
     id: "5",
-    title: "Visualização 3D Avançada",
-    category: "Visualização",
+    title: "Residência Salto",
+    category: "Arquitetura",
     serviceType: "arquitetura",
     image: "/images/paulo/projeto4.jpg",
     description: "A antecipação do sonho através do realismo. Modelagem fotorrealista que permite a compreensão exata de volumes, texturas e incidência solar antes mesmo do início da obra.",
     details: {
-      location: "Indaiatuba, SP",
-      area: "210m²",
+      location: "Salto, SP",
+      area: "140m²",
       year: "2026"
     },
     gallery: ["/images/paulo/projeto4.jpg", "/images/paulo/projeto4img2.jpg", "/images/paulo/projeto4img3.jpg"]
@@ -76,12 +76,11 @@ export const projects = [
   {
     id: "6",
     title: "Regularização de Imóvel",
-    category: "Prefeitura",
+    category: "Regularização",
     serviceType: "tecnico",
     image: "/images/aprovacao/approve.jpg",
     description: "Transformamos a burocracia em tranquilidade. Um processo rigoroso que garante a segurança jurídica do seu patrimônio e a plena regularidade do seu imóvel perante os órgãos competentes.",
     details: {
-      location: "Salto, SP",
       area: "Processo Legal",
       year: "2025"
     },
@@ -97,17 +96,19 @@ export const projects = [
   },
   {
       id: "7", 
-      title: "Nome do Novo Projeto",
+      title: "Residência Piemonte",
       category: "Arquitetura",
-      image: "/projects/novo-projeto/foto1.jpg", // <--- ADICIONE ESTA LINHA
-      description: "Descrição do projeto...",
+      serviceType: "arquitetura",
+      image: "/images/piemonte/Projeto6.jpeg",
+      description: "Fachada de casa térrea moderna em condomínio de alto padrão, com iluminação em LED linear, garagem para dois carros e paisagismo contemporâneo. Projeto arquitetônico autoral de Mayara Gaspareto.",
       gallery: [
-        "/projects/novo-projeto/foto1.jpg",
-        "/projects/novo-projeto/foto2.jpg",
+        "/images/piemonte/Projeto6.jpeg",
+        "/images/piemonte/projeto6img2.jpeg",
+        "/images/piemonte/projeto6img3.jpeg",
       ],
       details: {
         location: "Indaiatuba, SP",
-        area: "250m²"
+        area: "180m²"
       }
     }
 
