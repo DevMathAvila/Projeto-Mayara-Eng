@@ -21,20 +21,18 @@ export default function ProjetosPage() {
       <Navbar />
       <WhatsAppFloating />
 
-      {/* ELEMENTOS VISUAIS DE FUNDO (DEGRADÊ LIMPO E SOFISTICADO) */}
       <div className="absolute inset-0 pointer-events-none z-0">
-        {/* Mancha Azul Suave (Topo Esquerdo) */}
+
         <div className="absolute top-[-10%] left-[-10%] w-[800px] h-[800px] bg-arq-blue/[0.04] blur-[150px] rounded-full" />
         
-        {/* Mancha Laranja Sutil (Centro Direita) - o "Tcham" sem poluição */}
         <div className="absolute top-[20%] right-[-10%] w-[700px] h-[700px] bg-arq-orange/[0.05] blur-[130px] rounded-full" />
         
-        {/* Refluxo de Azul no fundo (Canto Inferior) */}
+        
         <div className="absolute bottom-[10%] left-[15%] w-[600px] h-[600px] bg-arq-blue/[0.03] blur-[120px] rounded-full" />
       </div>
 
       <div className="relative z-10">
-        {/* HEADER DA PÁGINA */}
+        
         <section className="pt-40 pb-10 px-6 max-w-7xl mx-auto">
           <Reveal>
             <div className="flex flex-col gap-3">
@@ -49,7 +47,7 @@ export default function ProjetosPage() {
           </Reveal>
         </section>
 
-        {/* FILTROS (Ajustado apenas para responsividade) */}
+      
         <section className="px-6 max-w-7xl mx-auto mb-12">
           <div className="flex flex-wrap justify-center md:justify-start gap-2 border-b border-arq-blue/5 pb-6">
             {categories.map((cat) => (
@@ -68,7 +66,7 @@ export default function ProjetosPage() {
           </div>
         </section>
 
-        {/* GRID DE PROJETOS */}
+      
         <section className="px-6 max-w-7xl mx-auto pb-24">
           <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             <AnimatePresence mode='popLayout'>
@@ -89,7 +87,7 @@ export default function ProjetosPage() {
         </section>
       </div>
 
-      {/* FOOTER SLIM */}
+      
       <footer id="contato" className="bg-arq-blue text-white py-16 px-6 relative rounded-t-[3rem] z-20">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/5 blur-[100px] rounded-full pointer-events-none" />
 

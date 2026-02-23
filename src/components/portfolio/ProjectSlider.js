@@ -16,7 +16,7 @@ export default function ProjectSlider({ images }) {
 
   return (
     <div className="relative w-full aspect-[4/3] md:aspect-[16/9] overflow-hidden rounded-xl bg-gray-200">
-      {/* Imagem com Animação */}
+
       <AnimatePresence mode="wait">
         <motion.img
           key={currentIndex}
@@ -30,7 +30,6 @@ export default function ProjectSlider({ images }) {
         />
       </AnimatePresence>
 
-      {/* Botões de Navegação */}
       <div className="absolute inset-0 flex items-center justify-between p-4">
         <button 
           onClick={prevStep}
@@ -46,7 +45,6 @@ export default function ProjectSlider({ images }) {
         </button>
       </div>
 
-      {/* Indicador de Quantidade (Ex: 1/5) */}
       <div className="absolute bottom-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm backdrop-blur-sm">
         {currentIndex + 1} / {images.length}
       </div>

@@ -78,7 +78,7 @@ export const projects = [
     title: "Regularização de Imóvel",
     category: "Regularização",
     serviceType: "tecnico",
-    isSpecial: true, // Tag para o componente identificar o layout novo
+    isSpecial: true,
     image: "/images/aprovacao/approve.jpg",
     description: "A regularização imobiliária vai muito além de papéis: é a proteção do seu patrimônio. Mayara Gaspareto oferece gestão técnica especializada para converter irregularidades em segurança jurídica.",
     details: {

@@ -44,7 +44,6 @@ export default function Home() {
       <Navbar />
       <WhatsAppFloating /> 
       
-      {/* 1. HERO SECTION */}
       <section className="relative pt-40 md:pt-56 pb-20 md:pb-32 px-6 overflow-hidden">
         <div className="absolute top-[-5%] left-[-10%] w-[300px] md:w-[800px] h-[300px] md:h-[800px] bg-arq-blue/10 blur-[80px] md:blur-[150px] rounded-full pointer-events-none animate-pulse" style={{ animationDuration: '8s' }} />
         <div className="absolute bottom-[10%] right-[-5%] w-[250px] md:w-[600px] h-[250px] md:h-[600px] bg-arq-orange/10 blur-[80px] md:blur-[130px] rounded-full pointer-events-none animate-pulse" style={{ animationDuration: '12s' }} />
@@ -94,7 +93,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. PROJETOS - LIMITADOS A 3 */}
       <section id="projetos" className="max-w-7xl mx-auto px-6 py-20 md:py-32">
         <Reveal>
           <div className="flex items-center justify-between mb-16 md:mb-24">
@@ -110,7 +108,6 @@ export default function Home() {
           </div>
         </Reveal>
 
-        {/* Slice ajustado para 3 itens */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-16">
           {projects.slice(0, 3).map((item, index) => (
             <Reveal key={item.id} delay={index * 0.1}>
@@ -128,7 +125,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2.5 JORNADA DO CLIENTE */}
       <section className="bg-arq-blue py-24 md:py-32 px-6 relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <Reveal>
@@ -153,7 +149,6 @@ export default function Home() {
         <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-arq-orange/10 blur-[150px] rounded-full pointer-events-none" />
       </section>
 
-      {/* 3. SOBRE */}
       <section id="sobre" className="bg-white py-20 md:py-32 border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-6 md:px-0">
           <Reveal delay={0.2}>
@@ -162,7 +157,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. CONTATO / FOOTER */}
       <footer id="contato" className="bg-arq-blue text-white py-20 md:py-32 px-6 overflow-hidden relative rounded-t-[3rem] md:rounded-t-[5rem]">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full md:w-[1000px] h-[500px] bg-white/5 blur-[80px] md:blur-[130px] rounded-full pointer-events-none" />
 

@@ -15,9 +15,9 @@ export default function Navbar() {
     <nav className="fixed top-0 z-50 w-full bg-white/70 backdrop-blur-md border-b border-white/30 shadow-sm shadow-black/[0.03]">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         
-        {/* Logo / Home */}
+
         <Link href="/" className="group flex items-center gap-3">
-          {/* Favicon na Navbar */}
+
           <div className="relative w-8 h-8 md:w-9 md:h-9 transition-all duration-500 group-hover:scale-110 group-hover:drop-shadow-md">
             <Image 
               src="/images/favicon/logo-brand.png" 
@@ -39,7 +39,6 @@ export default function Navbar() {
           </h1>
         </Link>
 
-        {/* Navegação - Apenas o essencial */}
         <div className="flex items-center space-x-6 md:space-x-10">
           <div className="flex space-x-6 md:space-x-10 text-[10px] font-bold uppercase tracking-widest">
             
@@ -67,7 +66,6 @@ export default function Navbar() {
 
           <div className="h-5 w-[1px] bg-arq-blue/10 hidden md:block"></div>
 
-          {/* Redes Sociais */}
           <a 
             href="https://instagram.com/eng.mayaragaspareto" 
             target="_blank" 
