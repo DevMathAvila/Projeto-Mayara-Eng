@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next"
 import '@/data/styles/globals.css';
 import { Inter } from 'next/font/google';
 import Navbar from '@/components/layout/Navbar';
