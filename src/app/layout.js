@@ -1,4 +1,4 @@
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 import '@/data/styles/globals.css';
 import { Inter } from 'next/font/google';
 import Navbar from '@/components/layout/Navbar';
@@ -10,7 +10,6 @@ export const metadata = {
     icon: '/images/favicon/logo-brand.png',
     apple: '/images/favicon/logo-brand.png',
   },
-  // --------------------------------
   title: {
     default: 'Mayara Gaspareto | Arquitetura & Engenharia em Indaiatuba',
     template: '%s | Mayara Gaspareto'
@@ -56,9 +55,13 @@ export default function RootLayout({ children }) {
     <html lang="pt-br" className="scroll-smooth">
       <body className={`${inter.className} bg-off-white text-dark-text flex flex-col min-h-screen`}>
         <Navbar /> 
+        
         <main className="flex-grow">
           {children}
         </main>
+
+        {/* O componente Analytics precisa ser invocado aqui para funcionar */}
+        <Analytics /> 
       </body>
     </html>
   );
