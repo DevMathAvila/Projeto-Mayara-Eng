@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next"; // Importação adicionada
 import '@/data/styles/globals.css';
 import { Inter } from 'next/font/google';
 import Navbar from '@/components/layout/Navbar';
@@ -60,8 +61,9 @@ export default function RootLayout({ children }) {
           {children}
         </main>
 
-        {/* O componente Analytics precisa ser invocado aqui para funcionar */}
+        {/* Ferramentas de monitoramento da Vercel */}
         <Analytics /> 
+        <SpeedInsights /> 
       </body>
     </html>
   );
