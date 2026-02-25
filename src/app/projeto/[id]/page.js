@@ -42,7 +42,6 @@ export default function ProjetoPage() {
       <Navbar />
       <WhatsAppFloating />
 
-      {/* LIGHTBOX MODAL */}
       <AnimatePresence>
         {isLightboxOpen && (
           <motion.div
@@ -107,11 +106,9 @@ export default function ProjetoPage() {
           </Reveal>
         </section>
 
-        {/* CONTEÚDO PRINCIPAL */}
         <section className="px-6 max-w-7xl mx-auto mb-20">
           <div className="flex flex-col gap-16">
             
-            {/* 1. SEÇÃO DE TEXTO/RISCOS (Sempre em cima na Regularização) */}
             {isRegularizacao && (
               <Reveal>
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-8">
@@ -154,7 +151,6 @@ export default function ProjetoPage() {
               </Reveal>
             )}
 
-            {/* 2. GALERIA (Agora menor e embaixo) */}
             <div className={`w-full ${isRegularizacao ? 'max-w-4xl mx-auto' : 'md:grid md:grid-cols-12 md:gap-12'}`}>
               
               {!isRegularizacao && (

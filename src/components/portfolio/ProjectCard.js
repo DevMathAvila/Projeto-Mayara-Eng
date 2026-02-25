@@ -17,7 +17,6 @@ export default function ProjectCard({ project }) {
     <Link href={`/projeto/${project.id}`} className="block group" ref={ref}>
       <div className="relative overflow-hidden rounded-xl bg-white shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
         
-        {/* Container da Imagem */}
         <div className="relative h-80 w-full overflow-hidden">
           <motion.div style={{ y }} className="relative h-[120%] w-full -top-[10%]">
             <Image
@@ -28,7 +27,6 @@ export default function ProjectCard({ project }) {
             />
           </motion.div>
 
-          {/* Overlay com Localização */}
           <div className="absolute inset-0 bg-arq-blue/60 opacity-0 transition-opacity duration-500 group-hover:opacity-100 flex flex-col items-center justify-center">
              <span className="text-white text-[9px] uppercase tracking-[0.4em] mb-3 opacity-80">{project.details.location}</span>
              <span className="text-white border border-white px-5 py-2 text-[10px] uppercase tracking-[0.3em] font-bold">
@@ -37,7 +35,6 @@ export default function ProjectCard({ project }) {
           </div>
         </div>
         
-        {/* Conteúdo do Card */}
         <div className="p-8">
           <div className="flex justify-between items-start mb-2">
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-arq-orange">

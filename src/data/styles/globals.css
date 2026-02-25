@@ -1,10 +1,9 @@
 @import "tailwindcss";
 
-/* Suas cores personalizadas agora ficam assim na v4: */
 @theme {
-  --color-arq-blue: #001F3F;   /* Azul Marinho */
-  --color-arq-orange: #D35400; /* Laranja */
-  --color-lux-gold: #C5A47E;   /* Mantive o dourado aqui também */
+  --color-arq-blue: #001F3F;
+  --color-arq-orange: #D35400;
+  --color-lux-gold: #C5A47E;
   --color-off-white: #FDFCFB;
 }
 html {

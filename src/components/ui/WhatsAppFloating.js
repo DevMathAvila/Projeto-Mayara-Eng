@@ -5,7 +5,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 export default function WhatsAppFloating() {
   return (
     <motion.a
-      href="https://wa.me/5519994092433" // Substitua pelo seu número real
+      href="https://wa.me/5519994092433"
       target="_blank"
       rel="noopener noreferrer"
       initial={{ scale: 0, opacity: 0 }}
@@ -16,7 +16,6 @@ export default function WhatsAppFloating() {
       aria-label="Contato via WhatsApp"
     >
       <FaWhatsapp size={28} />
-      {/* Tooltip opcional que aparece no hover */}
       <span className="absolute right-16 bg-white text-dark-text text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-md shadow-sm pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
         Fale comigo
       </span>

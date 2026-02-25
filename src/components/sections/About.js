@@ -6,7 +6,6 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           
-          {/* Lado da Imagem */}
           <div className="relative">
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm shadow-2xl bg-gray-100">
               <Image 
@@ -22,7 +21,6 @@ export default function About() {
             <div className="absolute -bottom-8 -left-8 w-48 h-48 bg-arq-orange/5 -z-10 rounded-full blur-3xl"></div>
           </div>
 
-          {/* Lado do Texto */}
           <div className="space-y-8">
             <div>
               <h2 className="text-sm font-bold tracking-[0.3em] text-arq-orange uppercase mb-4">
@@ -39,7 +37,6 @@ export default function About() {
                 Com formação híbrida em Arquitetura e Engenharia Civil, Mayara Gaspareto une a sensibilidade do design à precisão técnica. Cada projeto é uma fusão de estética minimalista e soluções estruturais sólidas.
               </p>
               
-              {/* BOX DE LOCALIZAÇÃO ESTRATÉGICA */}
               <div className="bg-gray-50 p-6 border-l-4 border-arq-orange italic text-sm text-arq-blue/80">
                 "Sediada em <strong>Indaiatuba/SP</strong>, com disponibilidade de atendimento presencial na região (Campinas, Salto e Itu) e projetos remotos para todo o Brasil sob consulta."
               </div>
@@ -49,7 +46,6 @@ export default function About() {
               </p>
             </div>
             
-            {/* Números/Conquistas */}
             <div className="grid grid-cols-3 gap-8 pt-8 border-t border-gray-100">
               <div>
                 <span className="block text-3xl font-light text-arq-blue">20+</span>

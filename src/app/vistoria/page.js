@@ -30,27 +30,25 @@ export default function VistoriaPage() {
       <Navbar />
       <WhatsAppFloating />
 
-      {/* --- FUNDO VIVO E DINÂMICO --- */}
+      
       <div className="absolute inset-0 z-0 pointer-events-none">
-        {/* Degradê de base para tirar o "cru" do branco */}
+      
         <div className="absolute inset-0 bg-gradient-to-br from-[#F2F2F2] via-[#E5E7EB] to-[#D1D5DB] opacity-50" />
         
-        {/* Manchas de cor muito mais presentes */}
         <div className="absolute top-[-10%] right-[-10%] w-[800px] h-[800px] bg-arq-blue/20 blur-[150px] rounded-full animate-pulse" />
         <div className="absolute bottom-[-5%] left-[-5%] w-[700px] h-[700px] bg-arq-orange/15 blur-[130px] rounded-full" />
         
-        {/* Linhas de "Pintura/Desenho" mais grossas e visíveis */}
         <svg className="absolute w-full h-full opacity-30" xmlns="http://www.w3.org/2000/svg">
           <line x1="-10%" y1="10%" x2="110%" y2="90%" stroke="#001F3F" strokeWidth="2" strokeDasharray="10 20" />
           <line x1="110%" y1="20%" x2="-10%" y2="80%" stroke="#FF8C00" strokeWidth="1" />
-          {/* Círculos decorativos que lembram marcações de planta */}
+        
           <circle cx="20%" cy="30%" r="150" stroke="#001F3F" strokeWidth="0.5" fill="none" opacity="0.2" />
           <circle cx="80%" cy="70%" r="200" stroke="#FF8C00" strokeWidth="0.5" fill="none" opacity="0.2" />
         </svg>
       </div>
 
       <div className="relative z-10 flex-grow">
-        {/* HERO SECTION */}
+        
         <section className="pt-48 pb-20 px-6 max-w-7xl mx-auto text-center">
           <Reveal>
             <div className="inline-flex items-center gap-2 bg-arq-blue text-white px-4 py-2 rounded-full mb-8 shadow-xl">
@@ -66,7 +64,6 @@ export default function VistoriaPage() {
           </Reveal>
         </section>
 
-        {/* CARDS COM MAIS CONTRASTE */}
         <section className="px-6 max-w-7xl mx-auto pb-32">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {diferenciais.map((item, idx) => (
@@ -83,7 +80,6 @@ export default function VistoriaPage() {
           </div>
         </section>
 
-        {/* CTA COM GRADIENTE VIBRANTE */}
         <section className="px-6 max-w-5xl mx-auto pb-40">
           <Reveal>
             <div className="relative bg-gradient-to-br from-arq-blue to-[#00152b] rounded-[4rem] p-12 md:p-24 overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.4)] border border-white/10">
