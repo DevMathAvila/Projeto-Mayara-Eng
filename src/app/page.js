@@ -1,4 +1,6 @@
 'use client';
+
+import { Analytics } from "@vercel/analytics/next"
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/layout/Navbar';
