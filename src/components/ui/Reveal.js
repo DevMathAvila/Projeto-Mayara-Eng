@@ -1,13 +1,15 @@
-'use client';
-import { motion } from 'framer-motion';
+"use client";
+import { motion } from "framer-motion";
 
-export default function Reveal({ children, delay = 0 }) {
+// Aparição sutil ao entrar na viewport. Sem exageros.
+export default function Reveal({ children, delay = 0, y = 24, className = "" }) {
   return (
     <motion.div
-      initial={{ y: 30, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      viewport={{ once: true }} 
-      transition={{ duration: 0.8, delay: delay, ease: "easeOut" }}
+      initial={{ opacity: 0, y }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
+      className={className}
     >
       {children}
     </motion.div>

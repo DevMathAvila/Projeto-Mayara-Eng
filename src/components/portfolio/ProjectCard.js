@@ -1,62 +1,39 @@
-'use client';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import Link from "next/link";
+import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 
 export default function ProjectCard({ project }) {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"]
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
-
   return (
-    <Link href={`/projeto/${project.id}`} className="block group" ref={ref}>
-      <div className="relative overflow-hidden rounded-xl bg-white shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
-        
-        <div className="relative h-80 w-full overflow-hidden">
-          <motion.div style={{ y }} className="relative h-[120%] w-full -top-[10%]">
-            <Image
-              src={project.image}
-              alt={project.title}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-          </motion.div>
-
-          <div className="absolute inset-0 bg-arq-blue/60 opacity-0 transition-opacity duration-500 group-hover:opacity-100 flex flex-col items-center justify-center">
-             <span className="text-white text-[9px] uppercase tracking-[0.4em] mb-3 opacity-80">{project.details.location}</span>
-             <span className="text-white border border-white px-5 py-2 text-[10px] uppercase tracking-[0.3em] font-bold">
-                Ver Detalhes
-             </span>
-          </div>
+    <Link href={`/projeto/${project.id}`} className="group block">
+      <article className="overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-1">
+        <div className="relative aspect-[4/3] overflow-hidden">
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <span className="absolute top-4 left-4 bg-navy/85 text-white text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full">
+            {project.category}
+          </span>
         </div>
-        
-        <div className="p-8">
-          <div className="flex justify-between items-start mb-2">
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-arq-orange">
-              {project.category}
-            </span>
-            <span className="text-[9px] font-medium text-gray-400 uppercase tracking-widest">
-              {project.details.location}
-            </span>
+
+        <div className="p-6">
+          <div className="flex items-center justify-between text-[12px] text-ink/50 font-medium">
+            <span>{project.details.location}</span>
+            <span>{project.details.year}</span>
           </div>
-          
-          <h3 className="text-xl font-light text-arq-blue group-hover:text-arq-orange transition-colors duration-300">
+          <h3 className="mt-2 font-[family-name:var(--font-display)] text-xl font-semibold text-navy group-hover:text-orange transition-colors">
             {project.title}
           </h3>
-          
-          <div className="mt-6 flex items-center text-[10px] font-bold uppercase tracking-widest text-gray-400 group-hover:text-arq-orange transition-all duration-300">
-            Explorar Projeto
-            <svg className="ml-2 h-3 w-3 transition-transform group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </div>
+          <p className="mt-2 text-sm text-ink/65 leading-relaxed line-clamp-2">{project.summary}</p>
+          <span className="mt-5 inline-flex items-center gap-1.5 text-[13px] font-semibold text-orange">
+            Ver projeto
+            <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </span>
         </div>
-      </div>
+      </article>
     </Link>
   );
 }

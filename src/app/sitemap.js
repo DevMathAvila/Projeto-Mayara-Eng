@@ -1,26 +1,22 @@
-export default function sitemap() {
-  const baseUrl = 'https://www.mayaragaspareto.com.br';
+import { projects } from "@/data/projects";
+import { site } from "@/lib/site";
 
-  // Geramos as URLs para os projetos (se você tiver rotas dinâmicas como /projetos/[id])
-  // Por enquanto, vamos focar nas rotas principais e na Home
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'weekly', // Como você está subindo projetos novos, 'weekly' é melhor que 'monthly'
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/projetos`, // Caso você tenha essa rota
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/regularizacao`, // Para dar foco ao seu serviço técnico
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
+export default function sitemap() {
+  const baseUrl = site.url;
+  const now = new Date();
+
+  const staticRoutes = [
+    { url: baseUrl, changeFrequency: "weekly", priority: 1.0 },
+    { url: `${baseUrl}/projetos`, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${baseUrl}/vistoria`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/privacidade`, changeFrequency: "yearly", priority: 0.2 },
   ];
+
+  const projectRoutes = projects.map((p) => ({
+    url: `${baseUrl}/projeto/${p.id}`,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
+  return [...staticRoutes, ...projectRoutes].map((r) => ({ ...r, lastModified: now }));
 }
