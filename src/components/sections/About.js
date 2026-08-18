@@ -12,7 +12,7 @@ export default function About() {
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/images/sobre/profiss.jpeg"
-                alt="Mayara Gaspareto, arquiteta e engenheira civil"
+                alt="Mayara Gaspareto, engenheira civil"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover object-[center_30%]"
@@ -34,10 +34,10 @@ export default function About() {
 
           <div className="mt-6 space-y-5 text-ink/75 leading-relaxed text-[17px]">
             <p>
-              A formação da Mayara reúne arquitetura e engenharia civil, e pra quem constrói isso vale
-              ouro. O desenho pensa no que o comprador procura, aquilo que faz a pessoa bater o olho e se
-              decidir na visita, e a engenharia garante que a casa seja possível de erguer e de aprovar
-              sem susto. Uma coisa sustenta a outra.
+              A Mayara é engenheira civil e assina o projeto da casa de ponta a ponta, e pra quem
+              constrói isso vale ouro. O desenho pensa no que o comprador procura, aquilo que faz a
+              pessoa bater o olho e se decidir na visita, e a engenharia garante que a casa seja possível
+              de erguer e de aprovar sem susto. Uma coisa sustenta a outra.
             </p>
             <p>
               Ela também pensa no seu bolso de construtor. Cada escolha de material e de solução é medida

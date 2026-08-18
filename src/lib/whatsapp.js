@@ -5,7 +5,7 @@ export const WHATSAPP_NUMBER = "5519986101624";
 // onde a pessoa está no site: explorar no topo, tirar dúvida no meio,
 // pedir orçamento no fim.
 export const waMessages = {
-  hero: "Olá, Mayara! Vi seu site e queria conhecer melhor seu trabalho de arquitetura e engenharia.",
+  hero: "Olá, Mayara! Vi seu site e queria conhecer melhor o seu trabalho de projeto e engenharia.",
   floating: "Olá, Mayara! Vim pelo site e queria tirar uma dúvida com você.",
   duvida: "Olá, Mayara! Estou pensando em um projeto e tenho algumas dúvidas. Pode me ajudar?",
   orcamento: "Olá, Mayara! Gostaria de solicitar um orçamento para o meu projeto.",

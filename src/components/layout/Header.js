@@ -40,7 +40,7 @@ export default function Header() {
               Mayara Gaspareto
             </span>
             <span className="block text-orange text-[10px] font-semibold uppercase tracking-[0.22em]">
-              Arquitetura e Engenharia
+              Projetos e Engenharia
             </span>
           </span>
         </Link>

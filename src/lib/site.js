@@ -4,7 +4,7 @@ import { WHATSAPP_NUMBER } from "@/lib/whatsapp";
 // PLACEHOLDER e não é renderizado até ser preenchido com dado real.
 export const site = {
   name: "Mayara Gaspareto",
-  role: "Arquiteta e Engenheira Civil",
+  role: "Engenheira Civil",
   url: "https://www.mayaragaspareto.com.br",
 
   // Localização e atendimento (confirmado)

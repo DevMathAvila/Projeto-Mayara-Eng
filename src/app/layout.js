@@ -9,9 +9,10 @@ import TrackClicks from "@/components/analytics/TrackClicks";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { site } from "@/lib/site";
 
-// GA4 só é carregado quando o Measurement ID (G-XXXX) estiver definido no
-// ambiente (NEXT_PUBLIC_GA_ID). Sem o ID, nada é carregado.
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+// GA4: usa o Measurement ID do ambiente (NEXT_PUBLIC_GA_ID) ou o padrão abaixo.
+// O ID de medição é público (fica visível no HTML), então pode ficar no código.
+// Carrega apenas em produção, para não registrar acessos de desenvolvimento.
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-PNYX2Y268K";
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -35,28 +36,29 @@ export const metadata = {
     apple: "/images/favicon/logo-brand.png",
   },
   title: {
-    default: "Mayara Gaspareto | Arquitetura e Engenharia em Indaiatuba",
+    default: "Mayara Gaspareto | Projeto de Casas e Engenharia em Indaiatuba",
     template: "%s | Mayara Gaspareto",
   },
   description:
-    "Arquiteta e engenheira civil em Indaiatuba. Projetos de casas para construtores, com arquitetura que vende e engenharia que segura a obra, além de regularização e vistoria técnica em Indaiatuba, Salto, Itu e Campinas.",
+    "Engenheira civil em Indaiatuba. Projeto de casas para construtores, com um olhar que valoriza a venda e a engenharia que segura a obra, além de regularização e vistoria técnica em Indaiatuba, Salto, Itu e Campinas.",
   keywords: [
     "Mayara Gaspareto",
-    "arquitetura em Indaiatuba",
     "engenheira civil Indaiatuba",
+    "projeto de casas Indaiatuba",
     "projeto residencial Indaiatuba",
+    "projeto de casa para construtor",
     "regularização de imóvel Indaiatuba",
     "vistoria técnica Indaiatuba",
     "aprovação de projeto prefeitura Indaiatuba",
-    "arquiteta em Salto",
-    "arquiteta em Itu",
+    "engenheira civil em Salto",
+    "projeto residencial em Itu",
   ],
   authors: [{ name: "Mayara Gaspareto" }],
   creator: "Mayara Gaspareto",
   openGraph: {
-    title: "Mayara Gaspareto | Arquitetura e Engenharia",
+    title: "Mayara Gaspareto | Projeto de Casas e Engenharia",
     description:
-      "Projetos residenciais, regularização de imóveis e vistoria técnica em Indaiatuba e região.",
+      "Projeto de casas para construtores, regularização de imóveis e vistoria técnica em Indaiatuba e região.",
     url: site.url,
     siteName: "Mayara Gaspareto",
     images: [
@@ -84,13 +86,13 @@ export default function RootLayout({ children }) {
         publisher: { "@id": `${site.url}/#organization` },
       },
       {
-        "@type": "ArchitecturalService",
+        "@type": "ProfessionalService",
         "@id": `${site.url}/#service`,
-        name: "Mayara Gaspareto | Arquitetura e Engenharia",
-        serviceType: "Arquitetura e Engenharia Civil",
+        name: "Mayara Gaspareto | Projeto de Casas e Engenharia",
+        serviceType: "Projeto residencial e engenharia civil",
         areaServed: ["Indaiatuba", "Salto", "Itu", "Campinas"],
         description:
-          "Projetos residenciais de alto padrão, regularização de imóveis e vistoria técnica.",
+          "Projeto de casas para construtores, regularização de imóveis e vistoria técnica.",
         provider: {
           "@type": "LocalBusiness",
           "@id": `${site.url}/#organization`,
@@ -124,7 +126,7 @@ export default function RootLayout({ children }) {
         <TrackClicks />
         <Analytics />
         <SpeedInsights />
-        {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
+        {GA_ID && process.env.NODE_ENV === "production" && <GoogleAnalytics gaId={GA_ID} />}
       </body>
     </html>
   );

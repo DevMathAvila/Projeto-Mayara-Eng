@@ -5,8 +5,8 @@ export const projects = [
   {
     id: "1",
     title: "Residência Evidências",
-    category: "Arquitetura",
-    serviceType: "arquitetura",
+    category: "Residencial",
+    serviceType: "residencial",
     image: "/images/denis/projeto1.webp",
     summary: "Residência de 180m² pensada para conectar os ambientes internos ao quintal e trazer luz natural para o dia a dia.",
     description:
@@ -21,8 +21,8 @@ export const projects = [
   {
     id: "2",
     title: "Residência Evidências",
-    category: "Arquitetura",
-    serviceType: "arquitetura",
+    category: "Residencial",
+    serviceType: "residencial",
     image: "/images/emerson/projeto2.webp",
     summary: "Casa de 180m² com volumetria marcante e planta aberta, equilibrando presença e leveza na fachada.",
     description:
@@ -37,8 +37,8 @@ export const projects = [
   {
     id: "3",
     title: "Residência Bom Sucesso",
-    category: "Arquitetura",
-    serviceType: "arquitetura",
+    category: "Residencial",
+    serviceType: "residencial",
     image: "/images/daiton/projeto3img2.webp",
     summary: "Casa urbana de 105m² com fechamento minimalista e pedra natural para garantir privacidade sem pesar a fachada.",
     description:
@@ -53,8 +53,8 @@ export const projects = [
   {
     id: "4",
     title: "Residência Maria Candida",
-    category: "Arquitetura",
-    serviceType: "arquitetura",
+    category: "Residencial",
+    serviceType: "residencial",
     image: "/images/candida/projeto4img2.webp",
     summary: "Projeto de 200m² com gestão completa da aprovação junto ao condomínio e à prefeitura.",
     description:
@@ -69,8 +69,8 @@ export const projects = [
   {
     id: "5",
     title: "Residência Salto",
-    category: "Arquitetura",
-    serviceType: "arquitetura",
+    category: "Residencial",
+    serviceType: "residencial",
     image: "/images/paulo/projeto4.webp",
     summary: "Casa de 140m² em Salto com estudo 3D fotorrealista para visualizar volumes e luz antes da obra.",
     description:
@@ -126,8 +126,8 @@ export const projects = [
   {
     id: "7",
     title: "Residência Piemonte",
-    category: "Arquitetura",
-    serviceType: "arquitetura",
+    category: "Residencial",
+    serviceType: "residencial",
     image: "/images/piemonte/Projeto6.jpeg",
     summary: "Térrea moderna em condomínio de alto padrão, com iluminação LED linear e fachada bem resolvida.",
     description:
@@ -141,4 +141,4 @@ export const projects = [
   },
 ];
 
-export const projectCategories = ["Todos", "Arquitetura", "Regularização"];
+export const projectCategories = ["Todos", "Residencial", "Regularização"];

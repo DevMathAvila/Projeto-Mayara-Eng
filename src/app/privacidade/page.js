@@ -25,7 +25,7 @@ export default function PrivacidadePage() {
               Quem trata os seus dados
             </h2>
             <p>
-              Este site é de Mayara Gaspareto, arquiteta e engenheira civil, sediada em {site.baseCity}.
+              Este site é de Mayara Gaspareto, engenheira civil, sediada em {site.baseCity}.
               {hasCnpj ? ` CNPJ ${site.placeholders.cnpj}.` : ""} Para qualquer assunto sobre os seus
               dados, o contato é pelo e-mail{" "}
               <a href={`mailto:${site.email}`} className="text-orange font-medium">

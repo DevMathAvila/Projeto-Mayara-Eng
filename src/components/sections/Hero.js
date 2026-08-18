@@ -22,7 +22,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-navy-deep/20" />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-12 sm:pb-16 md:pb-24 pt-28 md:pt-32">
-        <p className="eyebrow text-orange mb-5 sm:mb-6">Arquitetura e Engenharia para construtores · {site.baseCity}</p>
+        <p className="eyebrow text-orange mb-5 sm:mb-6">Projeto de Casas e Engenharia para construtores · {site.baseCity}</p>
 
         <h1 className="text-white font-[family-name:var(--font-display)] font-semibold leading-[1.08] sm:leading-[1.05] tracking-tight text-[2.1rem] sm:text-5xl md:text-6xl lg:text-[4.4rem] max-w-4xl">
           Casas que o comprador visita e já quer fechar.
@@ -30,7 +30,7 @@ export default function Hero() {
 
         <p className="mt-5 sm:mt-7 text-white/75 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl">
           Mayara Gaspareto projeta para quem constrói para vender em Indaiatuba e região.
-          Arquitetura que valoriza a casa na hora da venda, com a engenharia que mantém a obra
+          Um projeto que valoriza a casa na hora da venda, com a engenharia que mantém a obra
           no custo, no prazo e dentro da aprovação.
         </p>
 
