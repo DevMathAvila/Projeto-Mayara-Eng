@@ -15,9 +15,9 @@ export default function ContactLead() {
             Peça um orçamento sem compromisso.
           </h2>
           <p className="mt-4 text-white/70 text-lg leading-relaxed max-w-lg">
-            Conte o terreno, o padrão que você quer construir e o seu objetivo de venda. Preencha os
-            campos e a conversa já abre no WhatsApp com o seu recado pronto. Sem cadastro, sem custo, e a
-            primeira resposta costuma sair no mesmo dia.
+            Conte o que você está pensando em construir ou resolver, seja a casa pra sua família morar ou
+            um projeto pra vender. Preencha os campos e a conversa já abre no WhatsApp com o seu recado
+            pronto. Sem cadastro, sem custo, e a primeira resposta costuma sair no mesmo dia.
           </p>
 
           <div className="mt-10 space-y-5">

@@ -6,10 +6,10 @@ import Reveal from "@/components/ui/Reveal";
 // para serem verdadeiros no padrão de trabalho, sem prometer especificidade
 // que dependa de cada contrato.
 const itens = [
-  "Projeto pensado no que faz o comprador se decidir na visita",
-  "Imagens 3D realistas que também servem de material de venda",
+  "Projeto pensado na forma como a casa vai ser vivida no dia a dia",
+  "Imagens 3D realistas pra decidir antes da obra, que ainda ajudam na venda",
   "Projeto executivo detalhado, o manual da obra que evita retrabalho",
-  "Escolhas de material medidas pelo que valoriza na venda",
+  "Escolhas de material medidas pelo que agrega sem estourar o custo",
   "Gestão da aprovação e da regularização junto aos órgãos",
   "Suporte técnico durante a obra, do início à entrega",
 ];
@@ -25,7 +25,7 @@ export default function Entregaveis() {
           </h2>
           <p className="mt-4 text-white/65 text-lg leading-relaxed">
             Contratar a Mayara é ter projeto e engenharia na mesma mão, pra você construir com um plano
-            claro, o custo sob controle e a casa pronta pra vender.
+            claro, o custo sob controle e a casa bem resolvida do começo ao fim.
           </p>
         </div>
 

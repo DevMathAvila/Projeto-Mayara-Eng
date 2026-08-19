@@ -11,11 +11,11 @@ export default function Services() {
         <div className="max-w-2xl">
           <SectionLabel>Serviços</SectionLabel>
           <h2 className="mt-5 font-[family-name:var(--font-display)] text-3xl md:text-4xl font-semibold text-navy leading-tight">
-            Do projeto que vende à papelada resolvida.
+            Do projeto da casa à papelada resolvida.
           </h2>
           <p className="mt-4 text-ink/70 text-lg leading-relaxed">
-            Seja pra erguer uma casa do zero ou destravar a documentação de uma venda, o atendimento é o
-            mesmo: técnico, direto e pensado no resultado prático pro seu negócio.
+            Seja pra erguer uma casa do zero ou colocar a documentação em ordem, o atendimento é o mesmo:
+            técnico, direto e pensado no resultado prático pra você.
           </p>
         </div>
 

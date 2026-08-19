@@ -97,6 +97,10 @@ export default function Footer() {
             <span>{site.instagram.handle}</span>
           </div>
         </div>
+
+        <p className="mt-6 text-center text-[11px] text-white/30">
+          Desenvolvido por <span className="text-white/55 font-medium">AvilaCore</span>
+        </p>
       </div>
     </footer>
   );

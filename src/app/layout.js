@@ -40,13 +40,13 @@ export const metadata = {
     template: "%s | Mayara Gaspareto",
   },
   description:
-    "Engenheira civil em Indaiatuba. Projeto de casas para construtores, com um olhar que valoriza a venda e a engenharia que segura a obra, além de regularização e vistoria técnica em Indaiatuba, Salto, Itu e Campinas.",
+    "Engenheira civil em Indaiatuba. Projeto de casas e engenharia da ideia à obra, para famílias e construtores, além de regularização e vistoria técnica em Indaiatuba, Salto, Itu e Campinas.",
   keywords: [
     "Mayara Gaspareto",
     "engenheira civil Indaiatuba",
     "projeto de casas Indaiatuba",
     "projeto residencial Indaiatuba",
-    "projeto de casa para construtor",
+    "projeto de casa para construir",
     "regularização de imóvel Indaiatuba",
     "vistoria técnica Indaiatuba",
     "aprovação de projeto prefeitura Indaiatuba",
@@ -58,7 +58,7 @@ export const metadata = {
   openGraph: {
     title: "Mayara Gaspareto | Projeto de Casas e Engenharia",
     description:
-      "Projeto de casas para construtores, regularização de imóveis e vistoria técnica em Indaiatuba e região.",
+      "Projeto de casas e engenharia, regularização de imóveis e vistoria técnica em Indaiatuba e região.",
     url: site.url,
     siteName: "Mayara Gaspareto",
     images: [

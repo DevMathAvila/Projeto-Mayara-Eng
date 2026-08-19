@@ -6,13 +6,13 @@ import { waLink, waMessages } from "@/lib/whatsapp";
 const steps = [
   {
     n: "01",
-    title: "Viabilidade do terreno",
-    desc: "A gente olha o terreno e as regras da prefeitura e do condomínio pra saber, já no começo, o que dá pra construir e o que rende melhor ali.",
+    title: "Conversa e viabilidade",
+    desc: "A gente entende o que você quer, olha o terreno e as regras da prefeitura e do condomínio pra saber, já no começo, o que dá pra fazer ali.",
   },
   {
     n: "02",
-    title: "Projeto e 3D de venda",
-    desc: "A casa ganha forma e vira imagem realista, que serve tanto pra fechar as decisões da obra quanto pra vender na planta.",
+    title: "Projeto e 3D",
+    desc: "A casa ganha forma e você vê em imagens realistas antes da obra, o que ajuda a decidir com calma e ainda serve pra vender na planta, se for o caso.",
   },
   {
     n: "03",
@@ -33,11 +33,11 @@ export default function Process() {
         <div className="max-w-2xl">
           <SectionLabel dark>Como funciona</SectionLabel>
           <h2 className="mt-5 font-[family-name:var(--font-display)] text-3xl md:text-4xl font-semibold leading-tight">
-            Do terreno ao habite-se, você sabe onde está.
+            Do primeiro papo até a obra em pé, você sabe onde está.
           </h2>
           <p className="mt-4 text-white/65 text-lg leading-relaxed">
-            Nada de etapa surpresa ou custo escondido que estoura a sua conta de obra. O processo é
-            transparente da viabilidade do terreno até a entrega.
+            Nada de etapa surpresa ou custo escondido no meio do caminho. O processo é transparente da
+            primeira conversa até a entrega.
           </p>
         </div>
 

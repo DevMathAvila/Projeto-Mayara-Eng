@@ -15,11 +15,11 @@ export default function FeaturedProjects() {
           <div className="max-w-xl">
             <SectionLabel>Projetos</SectionLabel>
             <h2 className="mt-5 font-[family-name:var(--font-display)] text-3xl md:text-4xl font-semibold text-navy leading-tight">
-              Casas que saíram do papel e agradam na visita.
+              Casas que saíram do papel.
             </h2>
             <p className="mt-4 text-ink/70 text-lg leading-relaxed">
               Cada projeto aqui teve seu próprio desafio de terreno, custo e aprovação. Dê uma olhada e
-              veja se o padrão conversa com o público comprador que você atende.
+              veja se o padrão conversa com o que você tem em mente.
             </p>
           </div>
           <Link

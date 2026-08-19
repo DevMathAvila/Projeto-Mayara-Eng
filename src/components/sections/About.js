@@ -29,20 +29,20 @@ export default function About() {
         <div className="order-1 lg:order-2">
           <SectionLabel>Sobre</SectionLabel>
           <h2 className="mt-5 font-[family-name:var(--font-display)] text-3xl md:text-4xl font-semibold text-navy leading-tight">
-            Projeto bom é o que ajuda a vender a casa.
+            Uma casa bem resolvida começa no projeto.
           </h2>
 
           <div className="mt-6 space-y-5 text-ink/75 leading-relaxed text-[17px]">
             <p>
-              A Mayara é engenheira civil e assina o projeto da casa de ponta a ponta, e pra quem
-              constrói isso vale ouro. O desenho pensa no que o comprador procura, aquilo que faz a
-              pessoa bater o olho e se decidir na visita, e a engenharia garante que a casa seja possível
-              de erguer e de aprovar sem susto. Uma coisa sustenta a outra.
+              A Mayara é engenheira civil e assina o projeto da casa de ponta a ponta. O desenho pensa em
+              como a casa vai ser vivida no dia a dia, e a engenharia garante que ela seja possível de
+              erguer e de aprovar sem susto. Uma coisa sustenta a outra.
             </p>
             <p>
-              Ela também pensa no seu bolso de construtor. Cada escolha de material e de solução é medida
-              pelo que realmente valoriza na venda, sem gastar com exagero que não volta pra você. A parte
-              técnica e a burocracia ficam com ela, pra você focar em tocar a obra e o próximo lançamento.
+              O trabalho começa muito antes da planta bonita. Envolve entender o terreno, as regras do
+              condomínio e da prefeitura e o orçamento real de quem vai construir, pra que o projeto não
+              vire uma surpresa cara no meio da obra. Isso vale tanto pra quem está construindo pra morar
+              quanto pra quem constrói pra vender.
             </p>
             <p className="bg-white border-l-4 border-orange rounded-r-lg px-6 py-4 text-ink/80 italic">
               Sediada em {site.baseCity}, com atendimento presencial em {site.servesPresencial.join(", ")}.{" "}

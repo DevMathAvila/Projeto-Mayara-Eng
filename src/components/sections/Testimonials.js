@@ -13,9 +13,9 @@ export default function Testimonials() {
   return (
     <section className="bg-white py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6">
-        <SectionLabel>Quem constrói com a Mayara</SectionLabel>
+        <SectionLabel>Quem já construiu com a Mayara</SectionLabel>
         <h2 className="mt-5 font-[family-name:var(--font-display)] text-3xl md:text-4xl font-semibold text-navy leading-tight max-w-2xl">
-          O que os construtores dizem sobre projetar com ela.
+          O que os clientes dizem depois da obra pronta.
         </h2>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">

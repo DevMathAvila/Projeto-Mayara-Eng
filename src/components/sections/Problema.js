@@ -7,18 +7,18 @@ import { waLink, waMessages } from "@/lib/whatsapp";
 const dores = [
   {
     icon: FileWarning,
-    title: "A casa encalha no mercado",
-    text: "Um projeto que não conversa com o que o comprador procura deixa a obra parada e o seu capital preso por meses.",
+    title: "A planta trava na prefeitura",
+    text: "Um projeto que não respeita recuo, taxa de ocupação ou a norma do condomínio volta pra estaca zero e atrasa tudo.",
   },
   {
     icon: TrendingDown,
-    title: "A obra come a margem",
-    text: "Sem projeto executivo e com material escolhido no chute, o custo sobe e o lucro da venda derrete no meio do caminho.",
+    title: "A obra estoura o orçamento",
+    text: "Sem projeto executivo e com material escolhido no chute, o custo sobe e o susto aparece bem no meio da obra.",
   },
   {
     icon: FileX2,
-    title: "A papelada trava a venda",
-    text: "Casa sem aprovação ou sem regularização não fecha financiamento e segura a escritura bem na hora de assinar.",
+    title: "O imóvel fica irregular",
+    text: "Quando a construção não bate com a matrícula, a venda emperra, o financiamento não sai e o inventário complica.",
   },
 ];
 
@@ -27,13 +27,13 @@ export default function Problema() {
     <section className="bg-white py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-2xl">
-          <SectionLabel>Onde o lucro escapa</SectionLabel>
+          <SectionLabel>Onde a obra costuma dar errado</SectionLabel>
           <h2 className="mt-5 font-[family-name:var(--font-display)] text-3xl md:text-4xl font-semibold text-navy leading-tight">
-            Construir pra vender tem armadilha em cada etapa.
+            Construir não precisa virar dor de cabeça.
           </h2>
           <p className="mt-4 text-ink/70 text-lg leading-relaxed">
-            A maior parte do prejuízo de quem constrói pra vender começa antes do primeiro tijolo, na
-            parte técnica e na leitura do que o comprador quer. É aí que a Mayara entra.
+            A maior parte dos perrengues de uma obra começa antes do primeiro tijolo, na parte técnica
+            que costuma ser deixada de lado. É aí que a Mayara entra.
           </p>
         </div>
 
@@ -55,7 +55,7 @@ export default function Problema() {
         </div>
 
         <div className="mt-12 flex flex-col sm:flex-row items-center gap-5">
-          <p className="text-ink/80 text-lg">É esse tipo de problema que a Mayara resolve pra quem vive de construir.</p>
+          <p className="text-ink/80 text-lg">É esse tipo de problema que a Mayara resolve todo dia.</p>
           <a
             href={waLink(waMessages.duvida)}
             target="_blank"
